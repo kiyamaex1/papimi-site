@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien</title>
+  <style>
+    :root {
+      --bg: #f6f0e8;
+      --cream: #fffaf2;
+      --dark: #2d271f;
+      --text: #3b3329;
+      --muted: #7b6c5a;
+      --gold: #b98a3b;
+      --gold-dark: #936b2c;
+      --line: #e4d8c8
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.15
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #d6aa5a);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 25px rgba(185, 138, 59, .25);
+      transition: .25s;
+      border: 0;
+      cursor: pointer;
+      white-space: nowrap
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold))
+    }
+
+    .btn-light {
+      background: transparent;
+      color: var(--gold-dark);
+      border: 1px solid var(--gold);
+      box-shadow: none
+    }
+
+    .section {
+      padding: 85px 0
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 18px
+    }
+
+    .small-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 13px;
+      margin-bottom: 16px;
+      font-weight: 700
+    }
+
+    .divider {
+      width: 55px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px 0 28px
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(246, 240, 232, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(228, 216, 200, .6)
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      flex: none
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 26px
+    }
+
+    .logo span {
+      display: block;
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: .04em
+    }
+
+    .logo small {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 4px
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-left: auto
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: none
+    }
+
+    .language {
+      position: relative
+    }
+
+    .lang-toggle {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 242, .86);
+      color: var(--dark);
+      border-radius: 999px;
+      padding: 11px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 82px;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(45, 39, 31, .06)
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 170px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(45, 39, 31, .14);
+      display: none
+    }
+
+    .lang-menu.open {
+      display: block
+    }
+
+    .lang-option {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 13px 16px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 700;
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .lang-option:hover,
+    .lang-option.active {
+      background: #f0e4d4;
+      color: var(--gold-dark)
+    }
+
+    .hero {
+      min-height: 760px;
+      padding-top: 86px;
+      display: grid;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(246, 240, 232, .98) 0%, rgba(246, 240, 232, .82) 43%, rgba(246, 240, 232, .18) 100%), url("images/hero.jpg") center/cover no-repeat
+    }
+
+    .hero-content {
+      max-width: 560px;
+      padding: 90px 0
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 7vw, 86px);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .hero p {
+      max-width: 430px;
+      color: var(--text);
+      margin-bottom: 34px;
+      font-size: 18px
+    }
+
+    .benefits-bar {
+      margin-top: -65px;
+      position: relative;
+      z-index: 5
+    }
+
+    .benefits-grid {
+      background: var(--cream);
+      box-shadow: 0 20px 60px rgba(45, 39, 31, .08);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line)
+    }
+
+    .benefit {
+      padding: 34px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-right: 1px solid var(--line);
+      font-weight: 700
+    }
+
+    .benefit:last-child {
+      border-right: 0
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 25px;
+      flex: none
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .image-card {
+      min-height: 360px;
+      background: #ddd center/cover no-repeat;
+      box-shadow: 0 18px 50px rgba(45, 39, 31, .08)
+    }
+
+    .image-1 {
+      background-image: url("images/papimi-detail.jpg")
+    }
+
+    .image-2 {
+      background-image: url("images/consultation.jpg")
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 22px
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 34px
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .process {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 42px
+    }
+
+    .step {
+      background: #fff;
+      padding: 30px 22px;
+      border: 1px solid var(--line);
+      min-height: 210px
+    }
+
+    .step-number {
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 44px
+    }
+
+    .team-card {
+      background: var(--cream);
+      border: 1px solid var(--line)
+    }
+
+    .team-photo {
+      height: 250px;
+      background: #d8cbb9 center/cover no-repeat
+    }
+
+    .doctor {
+      background-image: url("images/dr-platz.jpg")
+    }
+
+    .bella {
+      background-image: url("images/bella.jpg")
+    }
+
+    .miriam {
+      background-image: url("images/miriam.jpg")
+    }
+
+    .alona {
+      background-image: url("images/alona.jpg")
+    }
+
+    .team-info {
+      padding: 24px
+    }
+
+    .team-info h3 {
+      font-size: 22px;
+      margin-bottom: 8px
+    }
+
+    .prices {
+      background: linear-gradient(90deg, rgba(45, 39, 31, .96), rgba(45, 39, 31, .82)), url("images/candle.jpg") center/cover no-repeat;
+      color: #fff
+    }
+
+    .prices h2,
+    .prices h3,
+    .prices .section-title {
+      color: #fff
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 42px
+    }
+
+    .price-card {
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 34px;
+      background: rgba(255, 255, 255, .04)
+    }
+
+    .contact {
+      background: var(--cream)
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 50px
+    }
+
+    .contact-line {
+      margin-bottom: 12px;
+      color: var(--muted)
+    }
+
+    footer {
+      background: #22201d;
+      color: #d8cbb9;
+      padding: 24px 0;
+      font-size: 13px
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap
+    }
+
+    @media(max-width:1050px) {
+      .menu {
+        display: none
+      }
+
+      .nav {
+        min-height: 78px
+      }
+
+      .logo span {
+        font-size: 13px
+      }
+
+      .logo small {
+        display: none
+      }
+
+      .nav-actions .btn {
+        padding: 12px 16px;
+        font-size: 11px
+      }
+    }
+
+    @media(max-width:950px) {
+
+      .benefits-grid,
+      .steps,
+      .team-grid,
+      .price-grid,
+      .contact-grid,
+      .two-col {
+        grid-template-columns: 1fr
+      }
+
+      .benefit {
+        border-right: 0;
+        border-bottom: 1px solid var(--line)
+      }
+
+      .hero {
+        min-height: 650px
+      }
+    }
+
+    @media(max-width:560px) {
+      .logo-mark {
+        width: 40px;
+        height: 40px
+      }
+
+      .logo span {
+        font-size: 11px
+      }
+
+      .nav-actions {
+        gap: 8px
+      }
+
+      .nav-actions .btn {
+        display: none
+      }
+
+      .lang-toggle {
+        min-width: 74px;
+        padding: 10px 12px
+      }
+
+      .section {
+        padding: 65px 0
+      }
+    }
+
+    .logo-img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      flex: none;
+    }
+
+    .image-card {
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .about-image {
+      height: 100%;
+      min-height: 360px;
+    }
+
+    /* Final brand palette and responsive polish */
+    :root {
+      --bg: #F2EDE3;
+      --cream: #FFFBF4;
+      --dark: #2F3437;
+      --text: #2F3437;
+      --muted: #6F675D;
+      --gold: #C8B38A;
+      --gold-dark: #A88753;
+      --line: #D8CBB7;
+      --paper: #F8F3EA;
+      --graphit-soft: #3A3F42;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--dark);
+    }
+
+    header {
+      background: rgba(242, 237, 227, .94);
+      border-bottom: 1px solid rgba(200, 179, 138, .42);
+      box-shadow: 0 10px 34px rgba(47, 52, 55, .06);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 179, 138, .72), transparent);
+    }
+
+    .nav {
+      position: relative;
+    }
+
+    .logo span {
+      color: var(--dark);
+    }
+
+    .logo small,
+    .small-label {
+      color: var(--gold-dark);
+    }
+
+    .divider {
+      background: var(--gold);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--gold), #DDC89E);
+      color: var(--dark);
+      box-shadow: 0 10px 25px rgba(200, 179, 138, .28);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #fff;
+    }
+
+    .btn-light {
+      background: transparent;
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+
+    .menu a {
+      padding: 10px 0;
+      transition: color .2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--gold-dark);
+    }
+
+    .mobile-menu-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 251, 244, .92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(47, 52, 55, .08);
+    }
+
+    .mobile-menu-toggle span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--dark);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .mobile-menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      background: linear-gradient(90deg, rgba(242, 237, 227, .98) 0%, rgba(242, 237, 227, .82) 44%, rgba(47, 52, 55, .1) 100%), url("images/hero.jpg") center/cover no-repeat;
+    }
+
+    .hero h1 {
+      color: var(--dark);
+      font-size: 74px;
+      letter-spacing: .02em;
+    }
+
+    .hero p {
+      color: var(--text);
+    }
+
+    .benefits-grid {
+      background: var(--cream);
+      border-color: var(--line);
+      box-shadow: 0 24px 70px rgba(47, 52, 55, .09);
+    }
+
+    .benefit {
+      border-color: var(--line);
+    }
+
+    .icon {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+      background: rgba(200, 179, 138, .08);
+    }
+
+    #papimi,
+    #team {
+      background: var(--bg);
+    }
+
+    #bereiche,
+    .contact:not(#kontakt) {
+      background: var(--paper);
+    }
+
+    .image-card {
+      background-color: #DED4C2;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 52px rgba(47, 52, 55, .09);
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .team-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(47, 52, 55, .07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 62px rgba(47, 52, 55, .12);
+    }
+
+    .team-photo {
+      height: auto;
+      aspect-ratio: 4 / 3.65;
+      min-height: 286px;
+      background-color: #DED4C2;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-bottom: 4px solid var(--gold);
+      position: relative;
+    }
+
+    .team-photo::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 34%;
+      background: linear-gradient(0deg, rgba(47, 52, 55, .18), rgba(47, 52, 55, 0));
+      pointer-events: none;
+    }
+
+    .doctor {
+      background-image: url("images/dr-platz.jpg");
+      background-position: center 24%;
+    }
+
+    .bella {
+      background-image: url("images/bella.jpg");
+      background-position: center 42%;
+    }
+
+    .miriam {
+      background-image: url("images/miriam.jpg");
+      background-position: center 8%;
+    }
+
+    .alona {
+      background-image: url("images/alona.jpg");
+      background-position: center 24%;
+    }
+
+    .team-info {
+      padding: 26px 24px 28px;
+      min-height: 178px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .team-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .team-info p {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .prices {
+      background: linear-gradient(90deg, rgba(47, 52, 55, .98), rgba(47, 52, 55, .88)), url("images/candle.jpg") center/cover no-repeat;
+      border-top: 1px solid rgba(200, 179, 138, .38);
+      border-bottom: 1px solid rgba(200, 179, 138, .38);
+    }
+
+    .prices h2,
+    .prices h3,
+    .prices .section-title {
+      color: #F2EDE3;
+    }
+
+    .price-focus {
+      max-width: 840px;
+      margin-top: 34px;
+      padding: 38px;
+      border: 1px solid rgba(200, 179, 138, .42);
+      background: rgba(242, 237, 227, .06);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .14);
+    }
+
+    .price-amount {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .price-packages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .price-package {
+      border: 1px solid rgba(200, 179, 138, .38);
+      background: rgba(255, 251, 244, .08);
+      padding: 18px 20px;
+    }
+
+    .price-package strong {
+      display: block;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .price-package span {
+      display: block;
+      color: #E8DECD;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .price-note {
+      margin-top: 18px;
+      color: #E8DECD;
+      font-size: 14px;
+    }
+
+    .prices .btn {
+      margin-top: 30px;
+    }
+
+    #kontakt {
+      background: var(--graphit-soft);
+      color: #F2EDE3;
+      border-top: 1px solid rgba(200, 179, 138, .38);
+    }
+
+    #kontakt h2,
+    #kontakt h3 {
+      color: #F2EDE3;
+    }
+
+    #kontakt p,
+    #kontakt .contact-line {
+      color: #E8DECD;
+    }
+
+    #kontakt .small-label {
+      color: var(--gold);
+    }
+
+    footer {
+      background: #25292B;
+      color: #F2EDE3;
+      border-top: 1px solid rgba(200, 179, 138, .5);
+    }
+
+    @media(max-width:1050px) {
+      header {
+        background: rgba(242, 237, 227, .97);
+      }
+
+      .nav {
+        min-height: 76px;
+        gap: 10px;
+      }
+
+      .logo {
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .logo span {
+        font-size: 12px;
+      }
+
+      .logo small {
+        display: none;
+      }
+
+      .menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin-left: 0;
+        padding: 10px;
+        background: var(--dark);
+        border: 1px solid rgba(200, 179, 138, .44);
+        border-radius: 18px;
+        box-shadow: 0 22px 60px rgba(47, 52, 55, .2);
+        font-size: 13px;
+        z-index: 80;
+      }
+
+      .menu.open {
+        display: flex;
+      }
+
+      .menu a {
+        color: #F2EDE3;
+        padding: 14px 16px;
+        border-radius: 12px;
+      }
+
+      .menu a:hover {
+        background: rgba(200, 179, 138, .14);
+        color: var(--gold);
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+        gap: 10px;
+      }
+
+      .nav-actions .btn {
+        padding: 12px 16px;
+        font-size: 11px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media(max-width:950px) {
+      .benefits-grid,
+      .steps,
+      .price-grid,
+      .contact-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 680px;
+        padding-top: 96px;
+        background-position: center top;
+      }
+
+      .hero-content {
+        padding: 80px 0 115px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .benefits-bar {
+        margin-top: -48px;
+      }
+
+      .benefits-grid {
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .benefit {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 24px;
+      }
+
+      .benefit:last-child {
+        border-bottom: 0;
+      }
+
+      .image-card,
+      .image-card img,
+      .about-image {
+        min-height: 280px;
+      }
+
+      .price-focus {
+        padding: 28px;
+      }
+
+      .contact-grid {
+        gap: 28px;
+      }
+    }
+
+    @media(max-width:700px) {
+      .price-packages {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:640px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .team-card {
+        max-width: 430px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .team-photo {
+        aspect-ratio: 4 / 3.35;
+        min-height: 300px;
+      }
+
+      .bella {
+        background-position: center 38%;
+      }
+
+      .miriam {
+        background-position: center top;
+      }
+    }
+
+    @media(max-width:560px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .logo-img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .logo span {
+        font-size: 10px;
+        line-height: 1.15;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .lang-toggle {
+        min-width: 70px;
+        padding: 10px 11px;
+        font-size: 12px;
+      }
+
+      .mobile-menu-toggle {
+        width: 42px;
+        height: 42px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .small-label {
+        font-size: 11px;
+        letter-spacing: .12em;
+      }
+
+      .hero {
+        min-height: 640px;
+        background: linear-gradient(90deg, rgba(242, 237, 227, .98) 0%, rgba(242, 237, 227, .86) 58%, rgba(47, 52, 55, .2) 100%), url("images/hero.jpg") center/cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 68px 0 98px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+        margin-bottom: 22px;
+      }
+
+      .hero p {
+        max-width: 100%;
+        margin-bottom: 26px;
+      }
+
+      .price-amount {
+        font-size: 36px;
+      }
+
+      .price-focus {
+        padding: 24px 20px;
+      }
+
+      .price-package strong {
+        font-size: 22px;
+      }
+
+      .team-photo {
+        min-height: 320px;
+      }
+
+      .team-info {
+        min-height: auto;
+      }
+
+      .footer-row {
+        gap: 10px;
+      }
+    }
+
+    
+
+    /* Purple letter effect for PAPIMI in the hero text */
+    .papimi-outline {
+      display: inline;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      color: #7A5BB0;
+      -webkit-text-stroke: .35px rgba(122, 91, 176, .68);
+      text-shadow: 0 0 7px rgba(122, 91, 176, .22), 0 1px 0 rgba(255, 251, 244, .46);
+      font-weight: 700;
+    }
+
+    /* Price section: light background with dark price card */
+    .prices {
+      background: #FFFBF4;
+      color: var(--dark);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .prices h2,
+    .prices h3,
+    .prices .section-title {
+      color: var(--dark);
+    }
+
+    .prices .small-label {
+      color: var(--gold-dark);
+    }
+
+    .prices .divider {
+      background: var(--gold);
+    }
+
+    .price-focus {
+      position: relative;
+      isolation: isolate;
+      overflow: visible;
+      background: #2F3437 !important;
+      color: #F2EDE3;
+      border: 0;
+      box-shadow: none;
+      transform: translateY(-4px);
+    }
+
+    .price-focus::before {
+      content: "";
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      top: 100%;
+      height: 64px;
+      background: radial-gradient(ellipse at center, rgba(37, 41, 43, .58) 0%, rgba(47, 52, 55, .34) 42%, rgba(47, 52, 55, 0) 72%);
+      filter: blur(18px);
+      transform: translateY(18px);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .price-focus::after {
+      content: "";
+      position: absolute;
+      inset: -34px -42px;
+      background: radial-gradient(ellipse at center, rgba(200, 179, 138, .46) 0%, rgba(200, 179, 138, .28) 34%, rgba(200, 179, 138, .12) 56%, rgba(200, 179, 138, 0) 76%);
+      filter: blur(26px);
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    .price-focus > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-focus p,
+    .price-note,
+    .price-package span {
+      color: #E8DECD;
+    }
+
+    .price-package {
+      background: rgba(255, 251, 244, .07);
+      border-color: rgba(200, 179, 138, .42);
+    }
+
+    /* Final price card: matte card, outside shadow only */
+    .price-focus {
+      position: relative !important;
+      overflow: visible !important;
+      isolation: auto !important;
+      background: #2F3437 !important;
+      background-image: none !important;
+      color: #F2EDE3;
+      border: 0 !important;
+      transform: translateY(-8px);
+      box-shadow:
+        0 18px 28px rgba(0, 0, 0, .22),
+        0 42px 78px rgba(47, 52, 55, .30),
+        0 0 0 16px rgba(47, 52, 55, .05),
+        0 0 92px 26px rgba(200, 179, 138, .42) !important;
+    }
+
+    .price-focus::before,
+    .price-focus::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    /* Final price card aura: oval black-to-gold glow outside only */
+    .price-focus {
+      background: #2F3437 !important;
+      background-image: none !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      isolation: isolate !important;
+      overflow: visible !important;
+      transform: translateY(-8px);
+    }
+
+    .price-focus::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    .price-focus::after {
+      content: "" !important;
+      display: block !important;
+      position: absolute;
+      left: -34px;
+      right: -34px;
+      top: -26px;
+      bottom: -34px;
+      background:
+        radial-gradient(ellipse at center, rgba(37, 41, 43, .72) 0%, rgba(47, 52, 55, .58) 43%, rgba(116, 96, 58, .58) 63%, rgba(200, 179, 138, .86) 78%, rgba(200, 179, 138, 0) 100%);
+      filter: blur(24px);
+      border-radius: 48% / 42%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* OUTSIDE ONLY: floating black-to-gold glow around the price card */
+    .price-aura {
+      position: relative !important;
+      max-width: 840px;
+      margin-top: 34px;
+      isolation: isolate;
+      overflow: visible;
+    }
+
+    .price-aura::before {
+      content: "";
+      position: absolute;
+      inset: -22px -34px -30px;
+      border-radius: 30px / 26px;
+      background:
+        radial-gradient(ellipse at center,
+          rgba(20, 22, 23, .88) 0%,
+          rgba(34, 37, 39, .78) 42%,
+          rgba(84, 70, 42, .62) 63%,
+          rgba(200, 179, 138, .86) 82%,
+          rgba(200, 179, 138, 0) 100%);
+      filter: blur(22px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .price-aura::after {
+      content: "";
+      position: absolute;
+      inset: -44px -66px -52px;
+      border-radius: 44px / 36px;
+      background:
+        radial-gradient(ellipse at center,
+          rgba(47, 52, 55, 0) 52%,
+          rgba(47, 52, 55, .35) 62%,
+          rgba(200, 179, 138, .48) 78%,
+          rgba(200, 179, 138, 0) 100%);
+      filter: blur(30px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .price-aura .price-focus {
+      position: relative !important;
+      z-index: 2 !important;
+      width: 100%;
+      max-width: none !important;
+      margin-top: 0 !important;
+      background: #2F3437 !important;
+      background-image: none !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      filter: none !important;
+      transform: none !important;
+      overflow: visible !important;
+    }
+
+    .price-focus::before,
+    .price-focus::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    /* Mobile anti-shift fix: keep all sections inside the phone viewport */
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      position: relative;
+    }
+
+    img,
+    video,
+    canvas,
+    svg {
+      max-width: 100%;
+    }
+
+    .prices {
+      overflow-x: clip;
+    }
+
+    .price-aura {
+      width: 100%;
+      max-width: min(840px, 100%) !important;
+    }
+
+    @media(max-width: 640px) {
+      .container {
+        width: calc(100% - 28px) !important;
+        max-width: 100% !important;
+      }
+
+      .nav {
+        width: calc(100% - 24px) !important;
+      }
+
+      .hero,
+      .section,
+      .benefits-bar,
+      footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      .price-aura {
+        margin-top: 28px;
+      }
+
+      .price-aura::before {
+        inset: -14px -10px -22px !important;
+        border-radius: 24px / 20px;
+        filter: blur(18px) !important;
+      }
+
+      .price-aura::after {
+        inset: -24px -14px -34px !important;
+        border-radius: 30px / 24px;
+        filter: blur(22px) !important;
+      }
+
+      .price-aura .price-focus {
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+    }
+
+    /* Compact team cards on phones */
+    @media(max-width: 640px) {
+      .team-grid {
+        gap: 18px !important;
+      }
+
+      .team-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .team-photo {
+        min-height: 210px !important;
+        aspect-ratio: 4 / 3 !important;
+      }
+
+      .team-info {
+        padding: 20px 20px 22px !important;
+        min-height: auto !important;
+      }
+
+      .team-info h3 {
+        font-size: 22px !important;
+        line-height: 1.12 !important;
+        margin-bottom: 8px !important;
+      }
+
+      .team-info p {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+      }
+    }
+
+    @media(max-width: 390px) {
+      .team-card {
+        max-width: 300px !important;
+      }
+
+      .team-photo {
+        min-height: 190px !important;
+      }
+    }
+
+    /* Light / dark theme switcher */
+    .theme-toggle {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      flex: none;
+      background: rgba(255, 250, 242, .88);
+      color: var(--dark);
+      box-shadow: 0 8px 22px rgba(45, 39, 31, .08);
+      cursor: pointer;
+      transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--gold);
+    }
+
+    .theme-toggle span {
+      font-size: 22px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    html[data-theme="dark"] {
+      --bg: #181B1C;
+      --cream: #23272A;
+      --dark: #F2EDE3;
+      --text: #EEE6D8;
+      --muted: #C9BDAA;
+      --gold: #D3BC8E;
+      --gold-dark: #C8A66A;
+      --line: rgba(211, 188, 142, .28);
+      --paper: #202426;
+      --graphit-soft: #22272A;
+      color-scheme: dark;
+    }
+
+    html[data-theme="dark"],
+    html[data-theme="dark"] body {
+      background: #181B1C !important;
+      color: var(--text) !important;
+    }
+
+    html[data-theme="dark"] header {
+      background: rgba(24, 27, 28, .94) !important;
+      border-bottom-color: rgba(211, 188, 142, .26) !important;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .28) !important;
+    }
+
+    html[data-theme="dark"] .logo span,
+    html[data-theme="dark"] .logo small,
+    html[data-theme="dark"] h1,
+    html[data-theme="dark"] h2,
+    html[data-theme="dark"] h3,
+    html[data-theme="dark"] .section-title {
+      color: #F2EDE3 !important;
+    }
+
+    html[data-theme="dark"] p,
+    html[data-theme="dark"] li,
+    html[data-theme="dark"] .contact-line,
+    html[data-theme="dark"] .team-info p {
+      color: #E8DECD !important;
+    }
+
+    html[data-theme="dark"] .lang-toggle,
+    html[data-theme="dark"] .theme-toggle,
+    html[data-theme="dark"] .mobile-menu-toggle {
+      background: rgba(47, 52, 55, .92) !important;
+      color: #F2EDE3 !important;
+      border-color: rgba(211, 188, 142, .34) !important;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22) !important;
+    }
+
+    html[data-theme="dark"] .mobile-menu-toggle span {
+      background: #F2EDE3 !important;
+    }
+
+    html[data-theme="dark"] .lang-menu,
+    html[data-theme="dark"] .menu {
+      background: #24282B !important;
+      border-color: rgba(211, 188, 142, .34) !important;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .34) !important;
+    }
+
+    html[data-theme="dark"] .lang-option {
+      color: #F2EDE3 !important;
+    }
+
+    html[data-theme="dark"] .lang-option:hover,
+    html[data-theme="dark"] .lang-option.active {
+      background: rgba(211, 188, 142, .13) !important;
+      color: var(--gold) !important;
+    }
+
+    html[data-theme="dark"] .hero {
+      background:
+        linear-gradient(90deg, rgba(24, 27, 28, .97) 0%, rgba(24, 27, 28, .84) 58%, rgba(47, 52, 55, .34) 100%),
+        url("images/hero.jpg") center/cover no-repeat !important;
+    }
+
+    html[data-theme="dark"] .hero p {
+      color: #E8DECD !important;
+    }
+
+    html[data-theme="dark"] .benefits-grid,
+    html[data-theme="dark"] .team-card,
+    html[data-theme="dark"] .image-card,
+    html[data-theme="dark"] .price-package {
+      background: #23272A !important;
+      border-color: rgba(211, 188, 142, .28) !important;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .22) !important;
+    }
+
+    html[data-theme="dark"] .benefit {
+      border-color: rgba(211, 188, 142, .22) !important;
+    }
+
+    html[data-theme="dark"] .section,
+    html[data-theme="dark"] #team {
+      background: #181B1C !important;
+    }
+
+    html[data-theme="dark"] #bereiche,
+    html[data-theme="dark"] #kontakt {
+      background: #22272A !important;
+      color: #F2EDE3 !important;
+      border-color: rgba(211, 188, 142, .28) !important;
+    }
+
+    html[data-theme="dark"] .prices {
+      background: #181B1C !important;
+      color: #F2EDE3 !important;
+      border-color: rgba(211, 188, 142, .28) !important;
+      overflow-x: clip;
+    }
+
+    html[data-theme="dark"] .price-aura .price-focus {
+      background: #2F3437 !important;
+      color: #F2EDE3 !important;
+    }
+
+    html[data-theme="dark"] .price-aura::before {
+      background: radial-gradient(ellipse at center,
+        rgba(0, 0, 0, .86) 0%,
+        rgba(35, 39, 42, .74) 42%,
+        rgba(91, 75, 44, .68) 64%,
+        rgba(211, 188, 142, .86) 84%,
+        rgba(211, 188, 142, 0) 100%) !important;
+    }
+
+    html[data-theme="dark"] .team-info {
+      background: #202426 !important;
+      border-top-color: rgba(211, 188, 142, .36) !important;
+    }
+
+    html[data-theme="dark"] footer {
+      background: #141617 !important;
+      color: #E8DECD !important;
+      border-top-color: rgba(211, 188, 142, .28) !important;
+    }
+
+    html[data-theme="dark"] .btn-light {
+      color: var(--gold) !important;
+      border-color: rgba(211, 188, 142, .58) !important;
+      background: transparent !important;
+    }
+
+    @media(max-width: 560px) {
+      .theme-toggle {
+        width: 42px;
+        height: 42px;
+      }
+
+      .theme-toggle span {
+        font-size: 20px;
+      }
+    }
+
+    /* Desktop nav polish: no dark box behind normal menu */
+    @media(min-width: 1051px) {
+      html[data-theme="dark"] .menu {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+      }
+
+      .menu {
+        gap: 24px !important;
+      }
+
+      .menu a {
+        position: relative;
+        padding: 10px 0;
+        white-space: nowrap;
+        transition: color .2s ease;
+      }
+
+      .menu a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 4px;
+        height: 1px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform .2s ease;
+        opacity: .9;
+      }
+
+      .menu a:hover {
+        color: var(--gold) !important;
+      }
+
+      .menu a:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    @media(max-width: 1050px) {
+      html[data-theme="dark"] .menu {
+        background: #24282B !important;
+        border: 1px solid rgba(211, 188, 142, .34) !important;
+        box-shadow: 0 22px 60px rgba(0, 0, 0, .34) !important;
+      }
+    }
+
+    /* Clean language dropdown: no broken flag emoji, better alignment */
+    .language {
+      z-index: 120;
+    }
+
+    .lang-menu {
+      top: calc(100% + 12px) !important;
+      right: 0 !important;
+      left: auto !important;
+      width: 162px !important;
+      min-width: 162px !important;
+      padding: 6px !important;
+      border-radius: 16px !important;
+      background: rgba(255, 251, 244, .98) !important;
+      border: 1px solid rgba(200, 179, 138, .34) !important;
+      box-shadow: 0 16px 42px rgba(47, 52, 55, .14) !important;
+      overflow: hidden !important;
+      z-index: 180 !important;
+    }
+
+    .lang-option {
+      min-height: 42px;
+      padding: 10px 12px !important;
+      border-radius: 11px !important;
+      gap: 10px !important;
+      font-size: 13px !important;
+      line-height: 1.1;
+    }
+
+    .lang-code {
+      width: 26px;
+      flex: 0 0 26px;
+      display: inline-flex;
+      justify-content: center;
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .lang-option.active {
+      background: rgba(200, 179, 138, .18) !important;
+      color: var(--dark) !important;
+    }
+
+    .lang-option:hover {
+      background: rgba(200, 179, 138, .12) !important;
+      color: var(--dark) !important;
+    }
+
+    html[data-theme="dark"] .lang-menu {
+      background: #24282B !important;
+      border-color: rgba(211, 188, 142, .34) !important;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .34) !important;
+    }
+
+    html[data-theme="dark"] .lang-code {
+      color: var(--gold) !important;
+    }
+
+    html[data-theme="dark"] .lang-option.active,
+    html[data-theme="dark"] .lang-option:hover {
+      background: rgba(211, 188, 142, .14) !important;
+      color: #F2EDE3 !important;
+    }
+
+    @media(max-width: 560px) {
+      .lang-menu {
+        width: 150px !important;
+        min-width: 150px !important;
+        right: -2px !important;
+      }
+    }
+
+    /* Smaller language dropdown, centered under the language button */
+    .lang-menu {
+      width: 138px !important;
+      min-width: 138px !important;
+      top: calc(100% + 8px) !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+      padding: 5px !important;
+      border-radius: 14px !important;
+    }
+
+    .lang-option {
+      min-height: 34px !important;
+      padding: 8px 9px !important;
+      gap: 8px !important;
+      font-size: 12px !important;
+      border-radius: 9px !important;
+    }
+
+    .lang-code {
+      width: 22px !important;
+      flex-basis: 22px !important;
+      font-size: 9px !important;
+    }
+
+    @media(max-width: 560px) {
+      .lang-menu {
+        width: 130px !important;
+        min-width: 130px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+      }
+
+      .lang-option {
+        min-height: 32px !important;
+        padding: 7px 8px !important;
+        font-size: 11.5px !important;
+      }
+    }
+
+    /* Phone-only language dropdown position and size */
+    @media(min-width: 561px) {
+      .lang-menu {
+        width: 162px !important;
+        min-width: 162px !important;
+        top: calc(100% + 12px) !important;
+        left: auto !important;
+        right: 0 !important;
+        transform: none !important;
+        padding: 6px !important;
+      }
+
+      .lang-option {
+        min-height: 42px !important;
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        font-size: 13px !important;
+      }
+
+      .lang-code {
+        width: 26px !important;
+        flex-basis: 26px !important;
+        font-size: 10px !important;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .lang-menu {
+        width: 124px !important;
+        min-width: 124px !important;
+        top: calc(100% + 6px) !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        padding: 4px !important;
+        border-radius: 13px !important;
+      }
+
+      .lang-option {
+        min-height: 30px !important;
+        padding: 6px 7px !important;
+        gap: 7px !important;
+        font-size: 11px !important;
+        border-radius: 8px !important;
+      }
+
+      .lang-code {
+        width: 20px !important;
+        flex-basis: 20px !important;
+        font-size: 8.5px !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav"><a class="logo" href="#start"><img src="images/logo.png"
+          alt="Gesundheitszentrum am Werdertor" class="logo-img">
+        <div><span data-i18n="logoTitle">GESUNDHEITSZENTRUM<br>AM WERDERTOR</span><small
+            data-i18n="logoSub">Regeneration. Energie. Balance.</small></div>
+      </a>
+      <nav class="menu" id="siteMenu"><a href="#papimi" data-i18n="navPapimi">PAPIMI®</a><a href="#bereiche"
+          data-i18n="navAreas">Anwendungsbereiche</a><a href="#team"
+          data-i18n="navTeam">Team</a><a href="#preise" data-i18n="navPrices">Preise</a><a href="#kontakt"
+          data-i18n="navContact">Kontakt</a></nav>
+      <div class="nav-actions">
+        <div class="language"><button class="lang-toggle" id="langToggle" type="button">🌐 <span
+              id="currentLang">DE</span> ▾</button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-option" type="button" data-lang="de"><span class="lang-code">DE</span><span>Deutsch</span></button>
+            <button class="lang-option" type="button" data-lang="en"><span class="lang-code">EN</span><span>English</span></button>
+            <button class="lang-option" type="button" data-lang="ru"><span class="lang-code">RU</span><span>Русский</span></button>
+          </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dunkle Ansicht einschalten" title="Thema wechseln"><span id="themeIcon" aria-hidden="true">☾</span></button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Navigation öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="btn" href="#kontakt" data-i18n="navAppointment">Termin vereinbaren</a>
+      </div>
+    </div>
+  </header>
+  <main id="start">
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="small-label" data-i18n="heroLabel">PAPIMI® Zentrum Wien</div>
+        <h1 data-i18n="heroTitle">Heilung. Kraft. Wohlbefinden.</h1>
+        <p data-i18n="heroText">Innovative <span class="papimi-outline">PAPIMI®</span> -    Technologie zur Unterstützung Ihrer Regeneration, Energie und
+          Lebensqualität.</p><a class="btn" href="#kontakt" data-i18n="heroBtn">Termin vereinbaren</a>
+      </div>
+    </section>
+    <section class="benefits-bar">
+      <div class="container benefits-grid">
+        <div class="benefit">
+          <div class="icon">≈</div><span data-i18n="benefit1">Nicht-invasiv und schmerzfrei</span>
+        </div>
+        <div class="benefit">
+          <div class="icon">♙</div><span data-i18n="benefit2">Unterstützt natürliche Regeneration</span>
+        </div>
+        <div class="benefit">
+          <div class="icon">⚡</div><span data-i18n="benefit3">Mehr Energie und Vitalität</span>
+        </div>
+        <div class="benefit">
+          <div class="icon">□</div><span data-i18n="benefit4">Wissenschaftlich fundierte Technologie</span>
+        </div>
+      </div>
+    </section>
+    <section id="papimi" class="section">
+      <div class="container two-col">
+        <div>
+          <div class="small-label" data-i18n="whatLabel">Was ist PAPIMI®?</div>
+          <h2 class="section-title" data-i18n="whatTitle">Sanfte Impulse für Ihre Regeneration</h2>
+          <div class="divider"></div>
+          <p data-i18n="whatText1">PAPIMI® ist eine nicht-invasive elektromagnetische Impulstechnologie, die
+            körpereigene Prozesse unterstützen und die Selbstregulation des Organismus fördern kann.</p><br>
+          <p data-i18n="whatText2">Die Anwendung ist schmerzfrei, angenehm und wird individuell auf Ihre Bedürfnisse
+            abgestimmt.</p><br><a class="btn btn-light" href="#bereiche" data-i18n="moreBtn">Mehr erfahren</a>
+        </div>
+        <div class="image-card image-1">
+          <div class="about-image">
+            <img src="images/papimi.jpg" alt="PAPIMI Anwendung">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bereiche" class="section contact">
+      <div class="container two-col">
+        <div class="image-card image-2">
+          <img src="images/places.png" alt="PAPIMI®">
+        </div>
+
+        <div>
+          <div class="small-label" data-i18n="areasLabel">Für wen ist PAPIMI®?</div>
+          <h2 class="section-title" data-i18n="areasTitle">Anwendungsbereiche</h2>
+          <div class="divider"></div>
+          <p data-i18n="areasText">PAPIMI® kann unterstützend eingesetzt werden für Menschen, die Regeneration, Energie
+            und Wohlbefinden fördern möchten.</p>
+          <ul class="check-list">
+            <li data-i18n="area1">Chronische Schmerzen und Verspannungen</li>
+            <li data-i18n="area2">Regeneration nach Verletzungen oder Operationen</li>
+            <li data-i18n="area3">Sport, Rehabilitation und Mobilität</li>
+            <li data-i18n="area4">Burnout, Stress und Erschöpfung</li>
+            <li data-i18n="area5">Energie, Konzentration und Brainfog</li>
+            <li data-i18n="area6">Prävention und gesundes Altern</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="team" class="section">
+      <div class="container">
+        <div class="small-label" data-i18n="teamLabel">Für Sie da</div>
+        <h2 class="section-title" data-i18n="teamTitle">Unser Team</h2>
+        <div class="divider"></div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-photo doctor"></div>
+            <div class="team-info">
+              <h3>Prim. em. Dr. med. Thomas Platz</h3>
+              <p data-i18n="doctorRole">Facharzt für Psychiatrie, Psychotherapeutische Medizin und Neurologie</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-photo bella"></div>
+            <div class="team-info">
+              <h3>Bella</h3>
+              <p data-i18n="bellaRole">PAPIMI® Expertin, Leitung & Betreuung</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-photo miriam"></div>
+            <div class="team-info">
+              <h3>Miriam</h3>
+              <p data-i18n="miriamRole">Betreuung, Einweisung & Organisation</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-photo alona"></div>
+            <div class="team-info">
+              <h3>Alona</h3>
+              <p data-i18n="alonaRole">Betreuung, Organisation & Terminplanung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="preise" class="section prices">
+      <div class="container prices-inner">
+        <div class="small-label" data-i18n="pricesLabel">Unsere Preise</div>
+        <h2 class="section-title" data-i18n="pricesTitle">Individuelle Behandlung</h2>
+        <div class="divider"></div>
+        <div class="price-aura">
+          <div class="price-focus">
+          <div class="price-amount" data-i18n="priceAmount">50 € – 130 €</div>
+          <p data-i18n="pricesText">Jede Behandlung wird individuell auf Ihre Beschwerden und Ziele abgestimmt. Daher richtet sich der Preis nach Dauer und Umfang der Therapie.</p>
+          <div class="price-packages">
+            <div class="price-package">
+              <strong data-i18n="packageFive">5 Sitzungen + 1 gratis</strong>
+              <span data-i18n="packageFiveText">Für einen kompakten Behandlungszyklus.</span>
+            </div>
+            <div class="price-package">
+              <strong data-i18n="packageTen">10 Sitzungen + 2 gratis</strong>
+              <span data-i18n="packageTenText">Für eine intensivere und nachhaltige Begleitung.</span>
+            </div>
+          </div>
+          <p class="price-note" data-i18n="priceNote">Die Erstberatung ist kostenlos und unverbindlich. Gemeinsam erstellen wir einen individuellen Behandlungsplan.</p>
+          </div>
+        </div>
+        <a class="btn" href="#kontakt" data-i18n="pricesBtn">Preise anfragen</a>
+      </div>
+    </section>
+    <section id="kontakt" class="section contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="small-label" data-i18n="contactLabel">Kontakt</div>
+          <h2 class="section-title" data-i18n="contactTitle">Termin vereinbaren</h2>
+          <div class="divider"></div>
+          <p data-i18n="contactText">Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich.</p><br><a
+            class="btn" href="tel:014090036" data-i18n="callBtn">Jetzt anrufen</a>
+        </div>
+        <div>
+          <h3>Gesundheitszentrum am Werdertor</h3>
+          <p class="contact-line">PAPIMI® Zentrum Wien</p>
+          <p class="contact-line">Werdertorgasse 15/10<br>1010 Wien</p>
+          <p class="contact-line">Telefon: 01 4090036</p>
+          <p class="contact-line">E-Mail: thomas.platz@psychotherapie.net</p>
+        </div>
+        <div>
+          <h3 data-i18n="hoursTitle">Öffnungszeiten</h3>
+          <p class="contact-line" data-i18n="hoursText">Montag – Freitag<br>09:00 – 18:00</p>
+          <p class="contact-line" data-i18n="hoursSat">Samstag nach Vereinbarung</p><br>
+          <h3 data-i18n="locationTitle">Standort</h3>
+          <p class="contact-line" data-i18n="locationText">Zentrale Lage im 1. Bezirk in Wien.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-row">
+      <div data-i18n="footerCopy">© Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien</div>
+      <div data-i18n="footerLinks">Impressum &nbsp; | &nbsp; Datenschutz &nbsp; | &nbsp; Patienteninformation</div>
+    </div>
+  </footer>
+  <script>
+    const translations = { de: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Regeneration. Energie. Balance.", navPapimi: "PAPIMI®", navAreas: "Anwendungsbereiche", navProcess: "Ablauf", navTeam: "Team", navPrices: "Preise", navContact: "Kontakt", navAppointment: "Termin vereinbaren", heroLabel: "PAPIMI® Zentrum Wien", heroTitle: "Heilung. Kraft. Wohlbefinden.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span>-Technologie zur Unterstützung Ihrer Regeneration, Energie und Lebensqualität.", heroBtn: "Termin vereinbaren", benefit1: "Nicht-invasiv und schmerzfrei", benefit2: "Unterstützt natürliche Regeneration", benefit3: "Mehr Energie und Vitalität", benefit4: "Wissenschaftlich fundierte Technologie", whatLabel: "Was ist PAPIMI®?", whatTitle: "Sanfte Impulse für Ihre Regeneration", whatText1: "PAPIMI® ist eine nicht-invasive elektromagnetische Impulstechnologie, die körpereigene Prozesse unterstützen und die Selbstregulation des Organismus fördern kann.", whatText2: "Die Anwendung ist schmerzfrei, angenehm und wird individuell auf Ihre Bedürfnisse abgestimmt.", moreBtn: "Mehr erfahren", areasLabel: "Für wen ist PAPIMI®?", areasTitle: "Anwendungsbereiche", areasText: "PAPIMI® kann unterstützend eingesetzt werden für Menschen, die Regeneration, Energie und Wohlbefinden fördern möchten.", area1: "Chronische Schmerzen und Verspannungen", area2: "Regeneration nach Verletzungen oder Operationen", area3: "Sport, Rehabilitation und Mobilität", area4: "Burnout, Stress und Erschöpfung", area5: "Energie, Konzentration und Brainfog", area6: "Prävention und gesundes Altern", processLabel: "So läuft Ihr Besuch ab", processTitle: "In fünf Schritten zu Ihrer Anwendung", step1Title: "Beratung & Anamnese", step1Text: "Wir sprechen über Ihre Beschwerden, Ziele und Erwartungen.", step2Title: "Ärztliche Empfehlung", step2Text: "Auf Wunsch erfolgt eine medizinische Einschätzung.", step3Title: "PAPIMI® Anwendung", step3Text: "Die Anwendung wird individuell auf Ihre Situation abgestimmt.", step4Title: "Nachsorge", step4Text: "Wir besprechen Ihre Reaktion und planen die nächsten Schritte.", step5Title: "Empfehlungen", step5Text: "Sie erhalten persönliche Empfehlungen für weitere Anwendungen.", teamLabel: "Für Sie da", teamTitle: "Unser Team", doctorRole: "Facharzt für Psychiatrie, Psychotherapeutische Medizin und Neurologie", bellaRole: "PAPIMI® Expertin, Leitung & Betreuung", miriamRole: "Betreuung, Einweisung & Organisation", alonaRole: "Betreuung, Organisation & Terminplanung", pricesLabel: "Unsere Preise", pricesTitle: "Individuelle Behandlung", pricesText: "Jede Behandlung wird individuell auf Ihre Beschwerden und Ziele abgestimmt. Daher richtet sich der Preis nach Dauer und Umfang der Therapie.", priceAmount: "50 € – 130 €", packageFive: "5 Sitzungen + 1 gratis", packageFiveText: "Für einen kompakten Behandlungszyklus.", packageTen: "10 Sitzungen + 2 gratis", packageTenText: "Für eine intensivere und nachhaltige Begleitung.", priceNote: "Die Erstberatung ist kostenlos und unverbindlich. Gemeinsam erstellen wir einen individuellen Behandlungsplan.", price1Title: "Einzelsitzung", price1Text: "Ideal zum Kennenlernen der PAPIMI®-Anwendung.", price2Title: "Pakete", price2Text: "Für regelmäßige Anwendungen und nachhaltige Begleitung.", price3Title: "Erstgespräch", price3Text: "Persönliche Einschätzung und individuelle Empfehlung.", pricesBtn: "Preise anfragen", contactLabel: "Kontakt", contactTitle: "Termin vereinbaren", contactText: "Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich.", callBtn: "Jetzt anrufen", hoursTitle: "Öffnungszeiten", hoursText: "Montag – Freitag<br>09:00 – 18:00", hoursSat: "Samstag nach Vereinbarung", locationTitle: "Standort", locationText: "Zentrale Lage im 1. Bezirk in Wien.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", footerLinks: "Impressum &nbsp; | &nbsp; Datenschutz &nbsp; | &nbsp; Patienteninformation" }, en: { pageTitle: "Health Center am Werdertor – PAPIMI® Center Vienna", logoTitle: "HEALTH CENTER<br>AM WERDERTOR", logoSub: "Regeneration. Energy. Balance.", navPapimi: "PAPIMI®", navAreas: "Areas of use", navProcess: "Process", navTeam: "Team", navPrices: "Prices", navContact: "Contact", navAppointment: "Book appointment", heroLabel: "PAPIMI® Center Vienna", heroTitle: "Healing. Strength. Well-being.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span> technology to support your regeneration, energy and quality of life.", heroBtn: "Book appointment", benefit1: "Non-invasive and pain-free", benefit2: "Supports natural regeneration", benefit3: "More energy and vitality", benefit4: "Scientifically based technology", whatLabel: "What is PAPIMI®?", whatTitle: "Gentle impulses for your regeneration", whatText1: "PAPIMI® is a non-invasive electromagnetic impulse technology that can support the body’s own processes and promote self-regulation.", whatText2: "The application is pain-free, pleasant and individually adapted to your needs.", moreBtn: "Learn more", areasLabel: "Who is PAPIMI® for?", areasTitle: "Areas of use", areasText: "PAPIMI® can be used as supportive care for people who want to promote regeneration, energy and well-being.", area1: "Chronic pain and tension", area2: "Regeneration after injuries or operations", area3: "Sports, rehabilitation and mobility", area4: "Burnout, stress and exhaustion", area5: "Energy, concentration and brain fog", area6: "Prevention and healthy aging", processLabel: "How your visit works", processTitle: "Your application in five steps", step1Title: "Consultation & anamnesis", step1Text: "We talk about your symptoms, goals and expectations.", step2Title: "Medical recommendation", step2Text: "A medical assessment can be provided on request.", step3Title: "PAPIMI® application", step3Text: "The application is individually adapted to your situation.", step4Title: "Follow-up", step4Text: "We discuss your reaction and plan the next steps.", step5Title: "Recommendations", step5Text: "You receive personal recommendations for further applications.", teamLabel: "Here for you", teamTitle: "Our team", doctorRole: "Specialist in psychiatry, psychotherapeutic medicine and neurology", bellaRole: "PAPIMI® expert, management & care", miriamRole: "Care, instruction & organization", alonaRole: "Care, organization & appointment planning", pricesLabel: "Our prices", pricesTitle: "Individual treatment", pricesText: "Each treatment is individually tailored to your symptoms and goals. Therefore, the price depends on the duration and scope of the therapy.", priceAmount: "50 € – 130 €", packageFive: "5 sessions + 1 free", packageFiveText: "For a compact treatment cycle.", packageTen: "10 sessions + 2 free", packageTenText: "For more intensive and lasting support.", priceNote: "The initial consultation is free of charge and non-binding. Together we create an individual treatment plan.", price1Title: "Single session", price1Text: "Ideal for getting to know the PAPIMI® application.", price2Title: "Packages", price2Text: "For regular applications and sustainable support.", price3Title: "Initial consultation", price3Text: "Personal assessment and individual recommendation.", pricesBtn: "Request prices", contactLabel: "Contact", contactTitle: "Book an appointment", contactText: "We look forward to your inquiry and will be happy to advise you personally.", callBtn: "Call now", hoursTitle: "Opening hours", hoursText: "Monday – Friday<br>09:00 – 18:00", hoursSat: "Saturday by appointment", locationTitle: "Location", locationText: "Central location in Vienna’s 1st district.", footerCopy: "© Health Center am Werdertor – PAPIMI® Center Vienna", footerLinks: "Imprint &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Patient information" }, ru: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Регенерация. Энергия. Баланс.", navPapimi: "PAPIMI®", navAreas: "Направления", navProcess: "Как проходит", navTeam: "Команда", navPrices: "Цены", navContact: "Контакты", navAppointment: "Записаться", heroLabel: "PAPIMI® Центр Вена", heroTitle: "Исцеление. Сила. Благополучие.", heroText: "Инновационная технология <span class=\"papimi-outline\">PAPIMI®</span> для поддержки восстановления, энергии и качества жизни.", heroBtn: "Записаться", benefit1: "Неинвазивно и без боли", benefit2: "Поддержка естественного восстановления", benefit3: "Больше энергии и жизненных сил", benefit4: "Научно обоснованная технология", whatLabel: "Что такое PAPIMI®?", whatTitle: "Мягкие импульсы для вашего восстановления", whatText1: "PAPIMI® — это неинвазивная электромагнитная импульсная технология, которая может поддерживать естественные процессы организма и саморегуляцию.", whatText2: "Процедура безболезненная, комфортная и подбирается индивидуально под ваши потребности.", moreBtn: "Подробнее", areasLabel: "Кому подходит PAPIMI®?", areasTitle: "Направления применения", areasText: "PAPIMI® может использоваться как поддерживающая процедура для людей, которые хотят улучшить восстановление, энергию и самочувствие.", area1: "Хронические боли и напряжение", area2: "Восстановление после травм или операций", area3: "Спорт, реабилитация и подвижность", area4: "Выгорание, стресс и истощение", area5: "Энергия, концентрация и brain fog", area6: "Профилактика и здоровое старение", processLabel: "Как проходит визит", processTitle: "Процедура в пять шагов", step1Title: "Консультация и анамнез", step1Text: "Мы обсуждаем ваши жалобы, цели и ожидания.", step2Title: "Врачебная рекомендация", step2Text: "По желанию возможна медицинская оценка.", step3Title: "PAPIMI® процедура", step3Text: "Процедура подбирается индивидуально под вашу ситуацию.", step4Title: "Наблюдение", step4Text: "Мы обсуждаем вашу реакцию и планируем следующие шаги.", step5Title: "Рекомендации", step5Text: "Вы получаете персональные рекомендации по дальнейшим процедурам.", teamLabel: "Мы рядом с вами", teamTitle: "Наша команда", doctorRole: "Специалист по психиатрии, психотерапевтической медицине и неврологии", bellaRole: "PAPIMI® эксперт, руководство и сопровождение", miriamRole: "Сопровождение, инструктаж и организация", alonaRole: "Сопровождение, организация и запись", pricesLabel: "Наши цены", pricesTitle: "Индивидуальное лечение", pricesText: "Каждая процедура индивидуально подбирается с учетом ваших жалоб и целей. Поэтому цена зависит от длительности и объема терапии.", priceAmount: "50 € – 130 €", packageFive: "5 сеансов + 1 бесплатно", packageFiveText: "Для компактного курса процедур.", packageTen: "10 сеансов + 2 бесплатно", packageTenText: "Для более интенсивного и устойчивого сопровождения.", priceNote: "Первичная консультация бесплатна и ни к чему не обязывает. Вместе мы составим индивидуальный план лечения.", price1Title: "Одна процедура", price1Text: "Идеально, чтобы познакомиться с PAPIMI®.", price2Title: "Пакеты", price2Text: "Для регулярных процедур и длительного сопровождения.", price3Title: "Первичная консультация", price3Text: "Личная оценка и индивидуальная рекомендация.", pricesBtn: "Узнать цены", contactLabel: "Контакты", contactTitle: "Записаться на прием", contactText: "Мы будем рады вашему обращению и лично проконсультируем вас.", callBtn: "Позвонить сейчас", hoursTitle: "Время работы", hoursText: "Понедельник – пятница<br>09:00 – 18:00", hoursSat: "Суббота по договоренности", locationTitle: "Адрес", locationText: "Удобное расположение в 1-м районе Вены.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", footerLinks: "Impressum &nbsp; | &nbsp; Datenschutz &nbsp; | &nbsp; Patienteninformation" } };
+    const langToggle = document.getElementById("langToggle"), langMenu = document.getElementById("langMenu"), currentLang = document.getElementById("currentLang"), langButtons = document.querySelectorAll(".lang-option"); function setLanguage(lang) { const d = translations[lang] || translations.de; document.documentElement.lang = lang; document.title = d.pageTitle; currentLang.textContent = lang.toUpperCase(); document.querySelectorAll("[data-i18n]").forEach(e => { const k = e.getAttribute("data-i18n"); if (d[k]) e.innerHTML = d[k] }); langButtons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang)); localStorage.setItem("selectedLanguage", lang); langMenu.classList.remove("open") } langToggle.addEventListener("click", () => langMenu.classList.toggle("open")); langButtons.forEach(b => b.addEventListener("click", () => setLanguage(b.dataset.lang))); document.addEventListener("click", e => { if (!e.target.closest(".language")) langMenu.classList.remove("open") }); setLanguage(localStorage.getItem("selectedLanguage") || "de");
+  </script>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const savedTheme = localStorage.getItem("selectedTheme");
+    function setTheme(theme) {
+      const nextTheme = theme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      themeIcon.textContent = nextTheme === "dark" ? "☀" : "☾";
+      themeToggle.setAttribute("aria-label", nextTheme === "dark" ? "Helle Ansicht einschalten" : "Dunkle Ansicht einschalten");
+      localStorage.setItem("selectedTheme", nextTheme);
+    }
+
+    setTheme(savedTheme || "light");
+
+    themeToggle.addEventListener("click", () => {
+      setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      document.getElementById("langMenu").classList.remove("open");
+    });
+  </script>
+  <script>
+    const siteMenu = document.getElementById("siteMenu");
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+
+    function closeSiteMenu() {
+      siteMenu.classList.remove("open");
+      mobileMenuToggle.classList.remove("open");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    mobileMenuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = siteMenu.classList.toggle("open");
+      mobileMenuToggle.classList.toggle("open", isOpen);
+      mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+      document.getElementById("langMenu").classList.remove("open");
+    });
+
+    siteMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeSiteMenu));
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".nav")) closeSiteMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1050) closeSiteMenu();
+    });
+  </script>
+</body>
+
+</html>
