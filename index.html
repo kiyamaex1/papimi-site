@@ -1913,6 +1913,66 @@
       }
     }
 
+    /* Hero photo background under headline */
+    .hero {
+      position: relative !important;
+      overflow: hidden !important;
+      background:
+        linear-gradient(90deg, rgba(255, 251, 244, .96) 0%, rgba(255, 251, 244, .86) 38%, rgba(255, 251, 244, .58) 63%, rgba(255, 251, 244, .25) 100%),
+        url("images/hero.jpg") center/cover no-repeat,
+        url("images/miriam.jpg") right center/cover no-repeat !important;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 36% 45%, rgba(255, 251, 244, .78) 0%, rgba(255, 251, 244, .46) 30%, rgba(255, 251, 244, 0) 62%),
+        linear-gradient(180deg, rgba(242, 237, 227, .06), rgba(242, 237, 227, .88));
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    html[data-theme="dark"] .hero {
+      background:
+        linear-gradient(90deg, rgba(24, 27, 28, .96) 0%, rgba(24, 27, 28, .82) 42%, rgba(24, 27, 28, .42) 72%, rgba(24, 27, 28, .24) 100%),
+        url("images/hero.jpg") center/cover no-repeat,
+        url("images/miriam.jpg") right center/cover no-repeat !important;
+    }
+
+    html[data-theme="dark"] .hero::after {
+      background:
+        radial-gradient(circle at 36% 45%, rgba(24, 27, 28, .7) 0%, rgba(24, 27, 28, .36) 32%, rgba(24, 27, 28, 0) 64%),
+        linear-gradient(180deg, rgba(24, 27, 28, .08), rgba(24, 27, 28, .92));
+    }
+
+    @media(max-width: 700px) {
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(255, 251, 244, .94) 0%, rgba(255, 251, 244, .84) 48%, rgba(255, 251, 244, .58) 100%),
+          url("images/hero.jpg") center/cover no-repeat,
+          url("images/miriam.jpg") center top/cover no-repeat !important;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(255, 251, 244, .55) 0%, rgba(255, 251, 244, .88) 70%, rgba(242, 237, 227, .96) 100%);
+      }
+
+      html[data-theme="dark"] .hero {
+        background:
+          linear-gradient(180deg, rgba(24, 27, 28, .92) 0%, rgba(24, 27, 28, .8) 52%, rgba(24, 27, 28, .62) 100%),
+          url("images/hero.jpg") center/cover no-repeat,
+          url("images/miriam.jpg") center top/cover no-repeat !important;
+      }
+    }
+
   </style>
 </head>
 
