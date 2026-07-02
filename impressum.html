@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum - Gesundheitszentrum am Werdertor</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <style>
+    :root {
+      --bg: #F2EDE3;
+      --cream: #FFFBF4;
+      --dark: #2F3437;
+      --text: #2F3437;
+      --muted: #6F675D;
+      --gold: #C8B38A;
+      --gold-dark: #A88753;
+      --line: #D8CBB7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(200, 179, 138, .42);
+      background: rgba(242, 237, 227, .94);
+    }
+
+    .container {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      flex: none;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .back {
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--dark);
+      background: rgba(255, 251, 244, .75);
+    }
+
+    main {
+      padding: 78px 0 90px;
+    }
+
+    .small-label {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 64px);
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      width: 56px;
+      height: 2px;
+      background: var(--gold);
+      margin: 22px 0 34px;
+    }
+
+    .content {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 60px rgba(47, 52, 55, .08);
+      padding: clamp(26px, 5vw, 46px);
+    }
+
+    section + section {
+      margin-top: 34px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .legal-note {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      background: #25292B;
+      color: #F2EDE3;
+      padding: 24px 0;
+      font-size: 13px;
+    }
+
+    @media(max-width: 560px) {
+      .nav {
+        min-height: 76px;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .brand span {
+        font-size: 11px;
+      }
+
+      .back {
+        padding: 10px 13px;
+        font-size: 11px;
+      }
+
+      main {
+        padding: 58px 0 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Gesundheitszentrum am Werdertor">
+        <span>GESUNDHEITSZENTRUM<br>AM WERDERTOR</span>
+      </a>
+      <a class="back" href="index.html">Zurueck</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="small-label">Rechtliche Angaben</div>
+      <h1>Impressum</h1>
+      <div class="divider"></div>
+
+      <div class="content">
+        <section>
+          <h2>Medieninhaberin und Betreiberin</h2>
+          <p><strong>Gesundheitszentrum am Werdertor</strong></p>
+          <p>Bella Osterreich</p>
+          <p>Werdertorgasse 15/10<br>1010 Wien<br>Oesterreich</p>
+        </section>
+
+        <section>
+          <h2>Kontakt</h2>
+          <p>Telefon: <a href="tel:014090036">01 4090036</a></p>
+          <p>E-Mail: <a href="mailto:Bella@werterdor.at">Bella@werterdor.at</a></p>
+        </section>
+
+        <section>
+          <h2>Taetigkeitsbereich</h2>
+          <p>PAPIMI&reg; Anwendung, Betreuung und Organisation im Gesundheitszentrum am Werdertor.</p>
+          <p class="muted">Die Inhalte dieser Website dienen der allgemeinen Information und ersetzen keine aerztliche Diagnose, Beratung oder Behandlung.</p>
+        </section>
+
+        <section>
+          <h2>Verantwortlich fuer den Inhalt</h2>
+          <p>Bella Osterreich</p>
+          <p>Gesundheitszentrum am Werdertor<br>Werdertorgasse 15/10<br>1010 Wien</p>
+        </section>
+
+        <section>
+          <h2>Haftung fuer Inhalte</h2>
+          <p>Die Inhalte dieser Website wurden mit groesstmoeglicher Sorgfalt erstellt. Fuer die Richtigkeit, Vollstaendigkeit und Aktualitaet der Inhalte wird jedoch keine Gewaehr uebernommen.</p>
+        </section>
+
+        <section>
+          <h2>Haftung fuer Links</h2>
+          <p>Diese Website kann Links zu externen Websites enthalten. Auf deren Inhalte besteht kein Einfluss; fuer diese Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+        </section>
+
+        <section>
+          <h2>Urheberrecht</h2>
+          <p>Texte, Bilder und Gestaltung dieser Website sind urheberrechtlich geschuetzt. Eine Verwendung ohne vorherige Zustimmung ist nicht gestattet.</p>
+        </section>
+
+        <p class="legal-note">Hinweis: UID-Nummer, Firmenbuchnummer oder berufsrechtliche Angaben koennen ergaenzt werden, sofern sie vorhanden oder rechtlich erforderlich sind.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">&copy; Gesundheitszentrum am Werdertor - PAPIMI&reg; Zentrum Wien</div>
+  </footer>
+</body>
+</html>
