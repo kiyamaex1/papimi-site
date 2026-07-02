@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232F3437%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C8B38A%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2222%22%20opacity%3D%22.62%22%2F%3E%3Cpath%20d%3D%22M49%2031c0%2010-8%2018-18%2018S13%2041%2013%2031s8-18%2018-18c8%200%2014%205%2014%2012%200%208-6%2014-14%2014-6%200-11-5-11-11s5-10%2010-10c5%200%209%204%209%208%200%205-4%208-8%208-3%200-6-2-6-5%22%2F%3E%3Cpath%20d%3D%22M43%2014c7%205%2011%2013%209%2022%22%20opacity%3D%22.8%22%2F%3E%3Cpath%20d%3D%22M18%2049c-7-6-9-15-6-24%22%20opacity%3D%22.8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232F3437%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C8B38A%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2222%22%20opacity%3D%22.62%22%2F%3E%3Cpath%20d%3D%22M49%2031c0%2010-8%2018-18%2018S13%2041%2013%2031s8-18%2018-18c8%200%2014%205%2014%2012%200%208-6%2014-14%2014-6%200-11-5-11-11s5-10%2010-10c5%200%209%204%209%208%200%205-4%208-8%208-3%200-6-2-6-5%22%2F%3E%3Cpath%20d%3D%22M43%2014c7%205%2011%2013%209%2022%22%20opacity%3D%22.8%22%2F%3E%3Cpath%20d%3D%22M18%2049c-7-6-9-15-6-24%22%20opacity%3D%22.8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232F3437%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C8B38A%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2222%22%20opacity%3D%22.62%22%2F%3E%3Cpath%20d%3D%22M49%2031c0%2010-8%2018-18%2018S13%2041%2013%2031s8-18%2018-18c8%200%2014%205%2014%2012%200%208-6%2014-14%2014-6%200-11-5-11-11s5-10%2010-10c5%200%209%204%209%208%200%205-4%208-8%208-3%200-6-2-6-5%22%2F%3E%3Cpath%20d%3D%22M43%2014c7%205%2011%2013%209%2022%22%20opacity%3D%22.8%22%2F%3E%3Cpath%20d%3D%22M18%2049c-7-6-9-15-6-24%22%20opacity%3D%22.8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <style>
     :root {
       --bg: #f6f0e8;
@@ -1889,6 +1892,24 @@
         width: 20px !important;
         flex-basis: 20px !important;
         font-size: 8.5px !important;
+      }
+    }
+
+    /* Mobile: image under text in Anwendungsbereiche */
+    @media(max-width: 950px) {
+      #bereiche .two-col {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      #bereiche .two-col > div:not(.image-card) {
+        order: 1 !important;
+      }
+
+      #bereiche .image-card.image-2 {
+        order: 2 !important;
+        width: 100%;
+        margin-top: 28px;
       }
     }
 
