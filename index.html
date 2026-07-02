@@ -1978,8 +1978,7 @@
       background-color: #F2EDE3 !important;
       background-image:
         linear-gradient(90deg, rgba(255, 251, 244, .94) 0%, rgba(255, 251, 244, .80) 44%, rgba(255, 251, 244, .54) 100%),
-        url("images/hero.jpg"),
-        url("images/miriam.jpg") !important;
+        url("images/hero.jpg"),       
       background-position: center center, center center, center center !important;
       background-size: auto, contain, contain !important;
       background-repeat: no-repeat, no-repeat, no-repeat !important;
@@ -1990,7 +1989,6 @@
       background-image:
         linear-gradient(90deg, rgba(24, 27, 28, .94) 0%, rgba(24, 27, 28, .78) 46%, rgba(24, 27, 28, .52) 100%),
         url("images/hero.jpg"),
-        url("images/miriam.jpg") !important;
       background-position: center center, center center, center center !important;
       background-size: auto, contain, contain !important;
       background-repeat: no-repeat, no-repeat, no-repeat !important;
@@ -2056,6 +2054,58 @@
           url("images/miriam.jpg") !important;
         background-position: center center, center center, center top !important;
         background-size: cover, cover, cover !important;
+      }
+    }
+
+    /* Hero photo visible on the left with readable text */
+    .hero {
+      background-image:
+        radial-gradient(ellipse at 52% 48%, rgba(255, 251, 244, .86) 0%, rgba(255, 251, 244, .72) 26%, rgba(255, 251, 244, .34) 52%, rgba(255, 251, 244, .12) 78%),
+        linear-gradient(90deg, rgba(255, 251, 244, .18) 0%, rgba(255, 251, 244, .42) 34%, rgba(255, 251, 244, .58) 56%, rgba(255, 251, 244, .28) 100%),
+        url("images/hero.jpg"),
+        url("images/miriam.jpg") !important;
+      background-position: center center, center center, center center, center center !important;
+      background-size: auto, auto, cover, cover !important;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat !important;
+    }
+
+    .hero::after {
+      background:
+        linear-gradient(180deg, rgba(242, 237, 227, .02) 0%, rgba(242, 237, 227, .34) 82%, rgba(242, 237, 227, .78) 100%) !important;
+    }
+
+    .hero-content {
+      text-shadow: 0 1px 18px rgba(255, 251, 244, .68);
+    }
+
+    html[data-theme="dark"] .hero {
+      background-image:
+        radial-gradient(ellipse at 52% 48%, rgba(24, 27, 28, .84) 0%, rgba(24, 27, 28, .70) 28%, rgba(24, 27, 28, .36) 55%, rgba(24, 27, 28, .18) 82%),
+        linear-gradient(90deg, rgba(24, 27, 28, .26) 0%, rgba(24, 27, 28, .48) 38%, rgba(24, 27, 28, .62) 58%, rgba(24, 27, 28, .34) 100%),
+        url("images/hero.jpg"),
+        url("images/miriam.jpg") !important;
+      background-position: center center, center center, center center, center center !important;
+      background-size: auto, auto, cover, cover !important;
+    }
+
+    html[data-theme="dark"] .hero::after {
+      background:
+        linear-gradient(180deg, rgba(24, 27, 28, .02) 0%, rgba(24, 27, 28, .34) 82%, rgba(24, 27, 28, .86) 100%) !important;
+    }
+
+    html[data-theme="dark"] .hero-content {
+      text-shadow: 0 1px 18px rgba(24, 27, 28, .72);
+    }
+
+    @media(max-width: 700px) {
+      .hero {
+        background-image:
+          radial-gradient(ellipse at 48% 34%, rgba(255, 251, 244, .82) 0%, rgba(255, 251, 244, .62) 36%, rgba(255, 251, 244, .26) 70%),
+          linear-gradient(180deg, rgba(255, 251, 244, .36) 0%, rgba(255, 251, 244, .64) 58%, rgba(255, 251, 244, .84) 100%),
+          url("images/hero.jpg"),
+          url("images/miriam.jpg") !important;
+        background-position: center center, center center, center center, center top !important;
+        background-size: auto, auto, cover, cover !important;
       }
     }
 
