@@ -1918,7 +1918,7 @@
       position: relative !important;
       overflow: hidden !important;
       background:
-        linear-gradient(90deg, rgba(255, 251, 244, .56) 0%, rgba(255, 251, 244, .46) 42%, rgba(255, 251, 244, .28) 72%, rgba(255, 251, 244, .12) 100%),
+        linear-gradient(90deg, rgba(255, 251, 244, .72) 0%, rgba(255, 251, 244, .62) 42%, rgba(255, 251, 244, .46) 72%, rgba(255, 251, 244, .34) 100%),
         url("images/hero.jpg") center/cover no-repeat !important;
     }
 
@@ -1928,8 +1928,9 @@
       inset: 0;
       pointer-events: none;
       background:
-        radial-gradient(circle at 33% 45%, rgba(255, 251, 244, .24) 0%, rgba(255, 251, 244, .12) 32%, rgba(255, 251, 244, 0) 66%),
-        linear-gradient(180deg, rgba(242, 237, 227, 0), rgba(242, 237, 227, .28));
+        radial-gradient(ellipse at 50% 46%, rgba(255, 255, 250, .92) 0%, rgba(255, 251, 244, .72) 24%, rgba(255, 251, 244, .34) 50%, rgba(255, 251, 244, 0) 78%),
+        radial-gradient(ellipse at 50% 46%, rgba(255, 255, 255, .58) 0%, rgba(255, 255, 255, 0) 42%),
+        linear-gradient(180deg, rgba(242, 237, 227, .02), rgba(242, 237, 227, .48));
       z-index: 0;
     }
 
@@ -1953,13 +1954,14 @@
     @media(max-width: 700px) {
       .hero {
         background:
-          linear-gradient(180deg, rgba(255, 251, 244, .52) 0%, rgba(255, 251, 244, .42) 48%, rgba(255, 251, 244, .34) 100%),
+          linear-gradient(180deg, rgba(255, 251, 244, .70) 0%, rgba(255, 251, 244, .58) 48%, rgba(255, 251, 244, .48) 100%),
           url("images/hero.jpg") center/cover no-repeat !important;
       }
 
       .hero::after {
         background:
-          linear-gradient(180deg, rgba(255, 251, 244, .14) 0%, rgba(255, 251, 244, .44) 74%, rgba(242, 237, 227, .72) 100%);
+          radial-gradient(ellipse at 50% 38%, rgba(255, 255, 250, .86) 0%, rgba(255, 251, 244, .58) 34%, rgba(255, 251, 244, 0) 72%),
+          linear-gradient(180deg, rgba(255, 251, 244, .28) 0%, rgba(255, 251, 244, .52) 74%, rgba(242, 237, 227, .82) 100%);
       }
 
       html[data-theme="dark"] .hero {
@@ -2087,19 +2089,23 @@
         font-size: clamp(31px, 9.4vw, 39px) !important;
       }
     }
-
     /* Theme-specific button text contrast */
     html[data-theme="light"] .btn:not(.btn-light),
     html:not([data-theme]) .btn:not(.btn-light) {
-      color: #ffffff !important;
+      color: #f3efe7 !important;
+    }
+
+    html[data-theme="light"] .btn:not(.btn-light):hover,
+    html:not([data-theme]) .btn:not(.btn-light):hover {
+      color: #fffaf2 !important;
     }
 
     html[data-theme="dark"] .btn:not(.btn-light) {
-      color: #202426 !important;
+      color: #34383a !important;
     }
 
     html[data-theme="dark"] .btn:not(.btn-light):hover {
-      color: #111516 !important;
+      color: #22272a !important;
     }
 
   </style>
@@ -2278,7 +2284,7 @@
             <span class="map-links"><a href="https://www.google.com/maps/search/?api=1&query=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer">Google Maps</a><span>·</span><a href="https://maps.apple.com/?q=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer">Apple Maps</a></span>
           </p>
           <p class="contact-line">Telefon: <a class="phone-link" href="tel:+4314090036">01 4090036</a></p>
-          <p class="contact-line">E-Mail: info@werdertor.at</p>
+          <p class="contact-line">E-Mail: thomas.platz@psychotherapie.net</p>
         </div>
         <div>
           <h3 data-i18n="hoursTitle">Öffnungszeiten</h3>
