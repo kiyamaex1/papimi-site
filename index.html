@@ -2405,6 +2405,27 @@
       padding-bottom: 7px !important;
     }
 
+    /* Desktop anchor position: sections land closer to the visual center */
+    @media(min-width: 1051px) {
+      #papimi,
+      #bereiche,
+      #team,
+      #preise,
+      #kontakt {
+        scroll-margin-top: clamp(150px, 18vh, 210px) !important;
+      }
+    }
+
+    @media(max-width: 1050px) {
+      #papimi,
+      #bereiche,
+      #team,
+      #preise,
+      #kontakt {
+        scroll-margin-top: 96px !important;
+      }
+    }
+
   </style>
 </head>
 
