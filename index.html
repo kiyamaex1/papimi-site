@@ -2354,6 +2354,43 @@
         0 0 36px rgba(141, 107, 232, .18) !important;
     }
 
+    /* Keep language selector gold, not violet */
+    .lang-toggle:hover,
+    .lang-toggle:focus-visible {
+      border-color: rgba(200, 179, 138, .58) !important;
+      box-shadow:
+        0 10px 24px rgba(47, 52, 55, .08),
+        0 0 0 4px rgba(200, 179, 138, .12) !important;
+    }
+
+    .lang-option.active,
+    .lang-option:hover {
+      background: rgba(200, 179, 138, .16) !important;
+      color: var(--gold-dark) !important;
+    }
+
+    .lang-code {
+      color: var(--gold-dark) !important;
+    }
+
+    html[data-theme="dark"] .lang-toggle:hover,
+    html[data-theme="dark"] .lang-toggle:focus-visible {
+      border-color: rgba(211, 188, 142, .48) !important;
+      box-shadow:
+        0 12px 28px rgba(0, 0, 0, .22),
+        0 0 0 4px rgba(211, 188, 142, .11) !important;
+    }
+
+    html[data-theme="dark"] .lang-option.active,
+    html[data-theme="dark"] .lang-option:hover {
+      background: rgba(211, 188, 142, .14) !important;
+      color: var(--gold) !important;
+    }
+
+    html[data-theme="dark"] .lang-code {
+      color: var(--gold) !important;
+    }
+
   </style>
 </head>
 
