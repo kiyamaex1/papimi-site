@@ -1276,12 +1276,6 @@
         height: 42px;
       }
 
-      .logo-fallback {
-        width: 42px;
-        height: 42px;
-        font-size: 23px;
-      }
-
       .logo span {
         font-size: 10px;
         line-height: 1.15;
@@ -2305,7 +2299,7 @@
 
       .nav {
         display: grid !important;
-        grid-template-columns: clamp(238px, 24vw, 306px) minmax(360px, 1fr) clamp(310px, 31vw, 372px) !important;
+        grid-template-columns: clamp(238px, 24vw, 306px) minmax(390px, 1fr) clamp(310px, 31vw, 372px) !important;
         column-gap: clamp(10px, 1.3vw, 16px) !important;
         justify-content: center !important;
       }
@@ -2329,7 +2323,7 @@
         width: 100% !important;
         margin-left: 0 !important;
         display: flex !important;
-        gap: clamp(11px, 1.05vw, 16px) !important;
+        gap: clamp(9px, .82vw, 13px) !important;
         align-items: center !important;
         justify-content: center !important;
       }
@@ -2342,8 +2336,8 @@
         min-width: 0 !important;
         text-align: center !important;
         white-space: nowrap !important;
-        font-size: clamp(9.2px, .78vw, 11px) !important;
-        letter-spacing: .028em !important;
+        font-size: clamp(8.8px, .72vw, 10.5px) !important;
+        letter-spacing: .022em !important;
       }
 
       .nav-actions {
@@ -2376,6 +2370,7 @@
         text-align: center !important;
         justify-self: end !important;
       }
+
     }
 
     /* Refined violet accent system */
@@ -2598,7 +2593,6 @@
       #bereiche,
       #team,
       #preise,
-      #anfahrt-kurz,
       #anfahrt,
       #kontakt {
         scroll-margin-top: clamp(150px, 18vh, 210px) !important;
@@ -2610,7 +2604,6 @@
       #bereiche,
       #team,
       #preise,
-      #anfahrt-kurz,
       #anfahrt,
       #kontakt {
         scroll-margin-top: 96px !important;
@@ -2757,114 +2750,6 @@
       box-shadow: 0 8px 20px rgba(215, 25, 32, .30) !important;
     }
 
-    .route-strip {
-      padding: 34px 0 42px;
-      background: linear-gradient(180deg, rgba(255, 251, 244, .94), rgba(242, 237, 227, .86));
-      border-bottom: 1px solid rgba(200, 179, 138, .20);
-    }
-
-    .route-card {
-      display: grid;
-      grid-template-columns: minmax(260px, .82fr) minmax(360px, 1fr) auto;
-      align-items: center;
-      gap: 24px;
-      padding: 22px 26px;
-      border: 1px solid rgba(200, 179, 138, .32);
-      background: rgba(255, 251, 244, .86);
-      box-shadow: 0 20px 54px rgba(47, 52, 55, .08), 0 0 28px rgba(141, 107, 232, .08);
-    }
-
-    .route-card .small-label {
-      margin-bottom: 8px;
-      font-size: 11px;
-    }
-
-    .route-card h2 {
-      margin: 0;
-      font-size: 30px;
-      line-height: 1.12;
-    }
-
-    .route-address {
-      margin-top: 10px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 850;
-      color: var(--dark);
-    }
-
-    .route-options {
-      display: grid;
-      gap: 12px;
-    }
-
-    .route-option {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--dark);
-    }
-
-    .route-option .transit-badges {
-      min-width: 150px;
-    }
-
-    .route-action {
-      justify-self: end;
-      white-space: nowrap;
-    }
-
-    html[data-theme="dark"] .route-strip {
-      background: linear-gradient(180deg, #181B1C, #202426);
-      border-bottom-color: rgba(211, 188, 142, .24);
-    }
-
-    html[data-theme="dark"] .route-card {
-      background: #23272A;
-      border-color: rgba(211, 188, 142, .30);
-      box-shadow: 0 20px 54px rgba(0, 0, 0, .22), 0 0 34px rgba(141, 107, 232, .12);
-    }
-
-    html[data-theme="dark"] .route-card h2,
-    html[data-theme="dark"] .route-address,
-    html[data-theme="dark"] .route-option {
-      color: #F2EDE3;
-    }
-
-    @media(max-width: 950px) {
-      .route-card {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .route-action {
-        justify-self: start;
-      }
-    }
-
-    @media(max-width: 560px) {
-      .route-strip {
-        padding: 24px 0 32px;
-      }
-
-      .route-card {
-        padding: 20px 18px;
-      }
-
-      .route-card h2 {
-        font-size: 27px;
-      }
-
-      .route-option {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 7px;
-      }
-    }
-
     @media(max-width: 950px) {
       .access-grid {
         grid-template-columns: 1fr;
@@ -2891,7 +2776,7 @@
       </a>
       <nav class="menu" id="siteMenu"><a href="#papimi" data-i18n="navPapimi">PAPIMI®</a><a href="#bereiche"
           data-i18n="navAreas">Anwendungsbereiche</a><a href="#team"
-          data-i18n="navTeam">Team</a><a href="#preise" data-i18n="navPrices">Preise</a><a href="#anfahrt-kurz"
+          data-i18n="navTeam">Team</a><a href="#preise" data-i18n="navPrices">Preise</a><a href="#anfahrt"
           data-i18n="navAccess">Anfahrt</a><a href="#kontakt"
           data-i18n="navContact">Kontakt</a></nav>
       <div class="nav-actions">
@@ -2956,32 +2841,6 @@
               <ellipse cx="12" cy="12" rx="8.2" ry="3.4" transform="rotate(120 12 12)"></ellipse>
             </svg>
           </div><span data-i18n="benefit4">Wissenschaftlich fundierte Technologie</span>
-        </div>
-      </div>
-    </section>
-    <section class="route-strip" id="anfahrt-kurz">
-      <div class="container">
-        <div class="route-card">
-          <div>
-            <div class="small-label" data-i18n="routeLabel">Anfahrt</div>
-            <h2 data-i18n="routeTitle">So kommen Sie zu uns</h2>
-            <div class="route-address" data-i18n="routeAddress">Werdertorgasse 15/10 · 1010 Wien</div>
-          </div>
-          <div class="route-options">
-            <div class="route-option">
-              <span class="transit-badges" aria-label="U-Bahn">
-                <span class="line-pill metro u2">U2</span><span class="line-pill metro u4">U4</span>
-              </span>
-              <span data-i18n="routeMetro">U-Bahn: Schottenring, nur wenige Minuten zu Fuß</span>
-            </div>
-            <div class="route-option">
-              <span class="transit-badges" aria-label="Straßenbahn">
-                <span class="line-pill tram tram-letter">D</span><span class="line-pill tram">1</span><span class="line-pill tram">31</span><span class="line-pill tram">71</span>
-              </span>
-              <span data-i18n="routeTram">Straßenbahn: Schottenring / Börse</span>
-            </div>
-          </div>
-          <a class="btn btn-light route-action" href="https://www.google.com/maps/search/?api=1&query=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer" data-i18n="routeBtn">Route planen</a>
         </div>
       </div>
     </section>
@@ -3174,8 +3033,8 @@
       heroAddressLead: "Adresse im 1. Bezirk",
       heroAddress: "Werdertorgasse 15/10, 1010 Wien",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
-      accessLabel: "Zentral erreichbar",
-      accessTitle: "Im 1. Bezirk ankommen",
+      accessLabel: "Anfahrt",
+      accessTitle: "So kommen Sie zu uns",
       accessText: "Unser Zentrum liegt in der Werdertorgasse 15/10, zentral im 1. Bezirk. Am nächsten sind Schottenring, Börse und Salztorbrücke - von dort sind es nur wenige Minuten zu Fuß.",
       accessRouteBtn: "Route planen",
       accessUbahnTitle: "U-Bahn",
@@ -3196,8 +3055,8 @@
       heroAddressLead: "Address in the 1st district",
       heroAddress: "Werdertorgasse 15/10, 1010 Vienna",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
-      accessLabel: "Easy to reach",
-      accessTitle: "Arrive in Vienna's 1st district",
+      accessLabel: "Directions",
+      accessTitle: "How to get to us",
       accessText: "Our center is located at Werdertorgasse 15/10, right in Vienna's 1st district. The closest stops are Schottenring, Börse and Salztorbrücke - only a short walk away.",
       accessRouteBtn: "Plan route",
       accessUbahnTitle: "Underground",
@@ -3218,8 +3077,8 @@
       heroAddressLead: "Адрес в 1-м районе",
       heroAddress: "Werdertorgasse 15/10, 1010 Wien",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
-      accessLabel: "Удобно добраться",
-      accessTitle: "В самом 1-м районе Вены",
+      accessLabel: "Как добраться",
+      accessTitle: "Как к нам доехать",
       accessText: "Наш центр находится по адресу Werdertorgasse 15/10, в центре 1-го района. Ближайшие точки - Schottenring, Börse и Salztorbrücke, оттуда всего несколько минут пешком.",
       accessRouteBtn: "Построить маршрут",
       accessUbahnTitle: "Метро",
