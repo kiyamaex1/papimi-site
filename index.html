@@ -2453,6 +2453,30 @@
         0 0 22px rgba(141, 107, 232, .28) !important;
     }
 
+    /* Keep the PAPIMI word sharp on the hero text. */
+    .hero .papimi-outline,
+    .papimi-outline {
+      color: #7655d8 !important;
+      font-weight: 850 !important;
+      background: none !important;
+      box-shadow: none !important;
+      filter: none !important;
+      text-shadow: none !important;
+      -webkit-text-stroke: 0 !important;
+    }
+
+    .hero .papimi-outline::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    html[data-theme="dark"] .hero .papimi-outline,
+    html[data-theme="dark"] .papimi-outline {
+      color: #b9a6f4 !important;
+      text-shadow: none !important;
+      -webkit-text-stroke: 0 !important;
+    }
+
     html[data-theme="dark"] .benefits-grid .benefit .icon {
       background:
         radial-gradient(circle at 50% 42%, rgba(185, 166, 244, .22), rgba(185, 166, 244, 0) 68%),
