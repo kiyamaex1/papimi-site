@@ -2293,14 +2293,14 @@
     /* Fixed desktop header slots: language changes no longer move spacing */
     @media(min-width: 1051px) {
       header .container.nav {
-        width: min(1180px, calc(100% - 32px)) !important;
-        max-width: 1180px !important;
+        width: min(1340px, calc(100% - 28px)) !important;
+        max-width: 1340px !important;
       }
 
       .nav {
         display: grid !important;
-        grid-template-columns: clamp(238px, 24vw, 306px) minmax(390px, 1fr) clamp(310px, 31vw, 372px) !important;
-        column-gap: clamp(10px, 1.3vw, 16px) !important;
+        grid-template-columns: clamp(210px, 21vw, 296px) minmax(0, 1fr) clamp(286px, 27vw, 348px) !important;
+        column-gap: clamp(10px, 1.2vw, 18px) !important;
         justify-content: center !important;
       }
 
@@ -2323,7 +2323,7 @@
         width: 100% !important;
         margin-left: 0 !important;
         display: flex !important;
-        gap: clamp(9px, .82vw, 13px) !important;
+        gap: clamp(8px, .9vw, 14px) !important;
         align-items: center !important;
         justify-content: center !important;
       }
@@ -2337,7 +2337,7 @@
         text-align: center !important;
         white-space: nowrap !important;
         font-size: clamp(8.8px, .72vw, 10.5px) !important;
-        letter-spacing: .022em !important;
+        letter-spacing: .018em !important;
       }
 
       .nav-actions {
@@ -2369,6 +2369,23 @@
         padding-right: 0 !important;
         text-align: center !important;
         justify-self: end !important;
+      }
+
+    }
+
+    @media(min-width: 1280px) {
+      .nav {
+        grid-template-columns: clamp(230px, 22vw, 300px) minmax(0, 1fr) clamp(300px, 28vw, 356px) !important;
+        column-gap: clamp(18px, 1.6vw, 26px) !important;
+      }
+
+      .menu {
+        gap: clamp(14px, 1.35vw, 23px) !important;
+      }
+
+      .menu a {
+        font-size: clamp(10px, .72vw, 11.4px) !important;
+        letter-spacing: .025em !important;
       }
 
     }
@@ -2618,6 +2635,7 @@
       #team,
       #preise,
       #anfahrt,
+      #eingang,
       #kontakt {
         scroll-margin-top: clamp(150px, 18vh, 210px) !important;
       }
@@ -2629,6 +2647,7 @@
       #team,
       #preise,
       #anfahrt,
+      #eingang,
       #kontakt {
         scroll-margin-top: 96px !important;
       }
@@ -2774,6 +2793,156 @@
       box-shadow: 0 8px 20px rgba(215, 25, 32, .30) !important;
     }
 
+    .entry-guide {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(200, 179, 138, .16), rgba(200, 179, 138, 0) 38%),
+        linear-gradient(180deg, rgba(255, 251, 244, .96), rgba(237, 228, 214, .94));
+      border-top: 1px solid rgba(200, 179, 138, .24);
+      border-bottom: 1px solid rgba(200, 179, 138, .22);
+      box-shadow: inset 0 34px 80px rgba(200, 179, 138, .09);
+    }
+
+    .entry-guide::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(1180px, calc(100% - 44px));
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, rgba(185, 138, 59, .42), transparent);
+      pointer-events: none;
+    }
+
+    .entry-guide-inner {
+      display: grid;
+      grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(28px, 5vw, 68px);
+      align-items: start;
+    }
+
+    .entry-head p {
+      max-width: 470px;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .entry-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .entry-step {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 251, 244, .84);
+      border: 1px solid rgba(200, 179, 138, .36);
+      box-shadow: 0 20px 54px rgba(47, 52, 55, .08), 0 0 30px rgba(141, 107, 232, .08);
+    }
+
+    .entry-photo {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: rgba(226, 216, 200, .72);
+      overflow: hidden;
+    }
+
+    .entry-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .entry-photo-facade img {
+      object-position: center 72%;
+    }
+
+    .entry-photo-intercom img {
+      object-position: 55% 72%;
+      transform: scale(1.28);
+      transform-origin: center bottom;
+      filter: contrast(1.16) brightness(1.07) saturate(1.04);
+    }
+
+    .entry-callout {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f2d693, #c89535);
+      color: #2f3437;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 251, 244, .78);
+      box-shadow: 0 12px 26px rgba(47, 52, 55, .28), 0 0 26px rgba(200, 149, 53, .26);
+    }
+
+    .entry-content {
+      padding: 18px 18px 20px;
+    }
+
+    .entry-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 28px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: rgba(200, 179, 138, .20);
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+    }
+
+    .entry-step h3 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      font-size: 22px;
+      line-height: 1.16;
+      font-weight: 400;
+    }
+
+    .entry-step p {
+      margin: 0;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    html[data-theme="dark"] .entry-guide {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(211, 188, 142, .13), rgba(211, 188, 142, 0) 42%),
+        linear-gradient(180deg, #25292C, #181B1C) !important;
+      border-color: rgba(211, 188, 142, .20) !important;
+    }
+
+    html[data-theme="dark"] .entry-step {
+      background: #23272A !important;
+      border-color: rgba(211, 188, 142, .28) !important;
+      box-shadow: 0 20px 54px rgba(0, 0, 0, .24), 0 0 34px rgba(141, 107, 232, .12) !important;
+    }
+
+    html[data-theme="dark"] .entry-head p,
+    html[data-theme="dark"] .entry-step h3,
+    html[data-theme="dark"] .entry-step p {
+      color: #F2EDE3 !important;
+    }
+
     @media(max-width: 950px) {
       .access-grid {
         grid-template-columns: 1fr;
@@ -2786,6 +2955,180 @@
       .access-card {
         min-height: auto;
       }
+
+      .entry-guide-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-photo {
+        aspect-ratio: 16 / 11;
+      }
+
+      .entry-photo-facade img {
+        object-position: center 88%;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .entry-guide {
+        padding-top: 58px !important;
+        padding-bottom: 58px !important;
+      }
+
+      .entry-guide .container {
+        width: min(100% - 28px, 1180px) !important;
+      }
+
+      .entry-guide-inner {
+        gap: 26px !important;
+      }
+
+      .entry-head .section-title {
+        font-size: 30px !important;
+        line-height: 1.12 !important;
+        margin-bottom: 14px !important;
+      }
+
+      .entry-head p {
+        font-size: 15.5px !important;
+        line-height: 1.5 !important;
+      }
+
+      .entry-steps {
+        gap: 18px !important;
+      }
+
+      .entry-step {
+        width: 100% !important;
+      }
+
+      .entry-photo {
+        aspect-ratio: 16 / 8.7 !important;
+      }
+
+      .entry-photo-facade img {
+        object-position: center 94% !important;
+      }
+
+      .entry-content {
+        padding: 14px 16px 18px !important;
+      }
+
+      .entry-number {
+        min-width: 30px !important;
+        height: 25px !important;
+        margin-bottom: 10px !important;
+        font-size: 11px !important;
+      }
+
+      .entry-step h3 {
+        font-size: 20px !important;
+      }
+
+      .entry-step p {
+        font-size: 14px !important;
+        line-height: 1.42 !important;
+      }
+    }
+
+    @media(max-width: 700px) {
+      .entry-guide {
+        padding-top: 46px !important;
+        padding-bottom: 46px !important;
+      }
+
+      .entry-guide .container {
+        width: calc(100% - 24px) !important;
+      }
+
+      .entry-head .section-title {
+        font-size: 28px !important;
+      }
+
+      .entry-head p {
+        font-size: 15px !important;
+        line-height: 1.45 !important;
+      }
+
+      .entry-photo {
+        height: auto !important;
+        aspect-ratio: 16 / 11 !important;
+      }
+
+      .entry-photo-facade img {
+        object-position: center bottom !important;
+      }
+
+      .entry-content {
+        padding: 12px 16px 16px !important;
+      }
+
+      .entry-step h3 {
+        font-size: 19px !important;
+        margin-bottom: 5px !important;
+      }
+
+      .entry-step p {
+        font-size: 13.5px !important;
+        line-height: 1.38 !important;
+      }
+    }
+
+    @media(max-width: 950px) {
+      .entry-photo {
+        height: auto !important;
+        aspect-ratio: 16 / 11 !important;
+      }
+
+      .entry-photo-facade img {
+        object-position: center bottom !important;
+      }
+
+      .entry-content {
+        padding-top: 12px !important;
+      }
+    }
+
+    .entry-photo {
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .entry-photo > img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+    }
+
+    .entry-photo-facade > img {
+      object-fit: fill !important;
+      object-position: center 58% !important;
+      transform: none !important;
+    }
+
+    .entry-photo-facade {
+      aspect-ratio: 4 / 5 !important;
+      background: rgba(226, 216, 200, .42) !important;
+    }
+
+    @media(max-width: 950px) {
+      .entry-photo-facade {
+        aspect-ratio: 1 / 1 !important;
+      }
+    }
+
+    .entry-photo-intercom > img {
+      object-position: 55% 72% !important;
+      transform: scale(1.28) !important;
+      transform-origin: center bottom !important;
+      filter: contrast(1.16) brightness(1.07) saturate(1.04) !important;
     }
 
   </style>
@@ -2801,7 +3144,8 @@
       <nav class="menu" id="siteMenu"><a href="#papimi" data-i18n="navPapimi">PAPIMI®</a><a href="#bereiche"
           data-i18n="navAreas">Anwendungsbereiche</a><a href="#team"
           data-i18n="navTeam">Team</a><a href="#preise" data-i18n="navPrices">Preise</a><a href="#anfahrt"
-          data-i18n="navAccess">Anfahrt</a><a href="#kontakt"
+          data-i18n="navAccess">Anfahrt</a><a href="#eingang"
+          data-i18n="navEntry">Eingang</a><a href="#kontakt"
           data-i18n="navContact">Kontakt</a></nav>
       <div class="nav-actions">
         <div class="language"><button class="lang-toggle" id="langToggle" type="button">🌐 <span
@@ -2829,7 +3173,7 @@
           Lebensqualität.</p>
         <div class="hero-actions">
           <a class="btn" href="#kontakt" data-i18n="heroBtn">Termin vereinbaren</a>
-          <a class="hero-location" href="https://www.google.com/maps/search/?api=1&query=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer">
+          <a class="hero-location" href="#anfahrt" aria-label="Zur Anfahrt springen">
             <span class="hero-location-icon" aria-hidden="true">⌖</span>
             <span class="hero-location-copy">
               <span class="hero-location-label" data-i18n="heroAddressLead">Adresse im 1. Bezirk</span>
@@ -3008,6 +3352,49 @@
         </div>
       </div>
     </section>
+    <section id="eingang" class="section entry-guide">
+      <div class="container entry-guide-inner">
+        <div class="entry-head">
+          <div class="small-label" data-i18n="entryLabel">Eingang</div>
+          <h2 class="section-title" data-i18n="entryTitle">So finden Sie zu uns</h2>
+          <div class="divider"></div>
+          <p data-i18n="entryText">Damit Sie uns ohne Suchen finden: zuerst der Hauseingang, dann die Klingel, danach die Tür Top 10.</p>
+        </div>
+        <div class="entry-steps">
+          <article class="entry-step">
+            <div class="entry-photo entry-photo-facade">
+              <img src="images/entry-facade.png" alt="Hauseingang Werdertorgasse 15">
+            </div>
+            <div class="entry-content">
+              <span class="entry-number">01</span>
+              <h3 data-i18n="entryStep1Title">Hauseingang</h3>
+              <p data-i18n="entryStep1Text">Gehen Sie durch den Eingang der Werdertorgasse 15.</p>
+            </div>
+          </article>
+          <article class="entry-step">
+            <div class="entry-photo entry-photo-intercom">
+              <img src="images/entry-intercom.jpg" alt="Gegensprechanlage am Eingang">
+              <span class="entry-callout">Top 10</span>
+            </div>
+            <div class="entry-content">
+              <span class="entry-number">02</span>
+              <h3 data-i18n="entryStep2Title">Klingel</h3>
+              <p data-i18n="entryStep2Text">Bei der Gegensprechanlage bitte PAPIMI® / Top 10 wählen.</p>
+            </div>
+          </article>
+          <article class="entry-step">
+            <div class="entry-photo">
+              <img src="images/entry-door.png" alt="Tür Nummer 10 im Gebäude">
+            </div>
+            <div class="entry-content">
+              <span class="entry-number">03</span>
+              <h3 data-i18n="entryStep3Title">Tür Top 10</h3>
+              <p data-i18n="entryStep3Text">Im Haus folgen Sie zur Tür mit der Nummer 10.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <section id="kontakt" class="section contact">
       <div class="container contact-grid">
         <div>
@@ -3048,6 +3435,7 @@
 
     Object.assign(translations.de, {
       navAccess: "Anfahrt",
+      navEntry: "Eingang",
       routeLabel: "Anfahrt",
       routeTitle: "So kommen Sie zu uns",
       routeAddress: "Werdertorgasse 15/10 · 1010 Wien",
@@ -3066,10 +3454,20 @@
       accessTramTitle: "Straßenbahn",
       accessTramText: "Nächste Straßenbahn-Haltestellen: Schottenring und Börse. Dort fahren die Linien D, 1, 31 und 71.",
       accessCenterTitle: "Zentral & angenehm",
-      accessCenterText: "Die Lage im 1. Bezirk macht Ihren Besuch unkompliziert: gut zu Fuß aus der Innenstadt, schnell mit dem Taxi und einfach mit öffentlichen Verkehrsmitteln."
+      accessCenterText: "Die Lage im 1. Bezirk macht Ihren Besuch unkompliziert: gut zu Fuß aus der Innenstadt, schnell mit dem Taxi und einfach mit öffentlichen Verkehrsmitteln.",
+      entryLabel: "Eingang",
+      entryTitle: "So finden Sie zu uns",
+      entryText: "Damit Sie uns ohne Suchen finden: zuerst der Hauseingang, dann die Klingel, danach die Tür Top 10.",
+      entryStep1Title: "Hauseingang",
+      entryStep1Text: "Gehen Sie durch den Eingang der Werdertorgasse 15.",
+      entryStep2Title: "Klingel",
+      entryStep2Text: "Bei der Gegensprechanlage bitte PAPIMI® / Top 10 wählen.",
+      entryStep3Title: "Tür Top 10",
+      entryStep3Text: "Im Haus folgen Sie zur Tür mit der Nummer 10."
     });
     Object.assign(translations.en, {
       navAccess: "Directions",
+      navEntry: "Entrance",
       routeLabel: "Directions",
       routeTitle: "How to get to us",
       routeAddress: "Werdertorgasse 15/10 · 1010 Vienna",
@@ -3088,10 +3486,20 @@
       accessTramTitle: "Tram",
       accessTramText: "Nearest tram stops: Schottenring and Börse. Tram lines D, 1, 31 and 71 stop there.",
       accessCenterTitle: "Central & pleasant",
-      accessCenterText: "The location in the 1st district makes your visit easy: walk from the city center, arrive quickly by taxi or use public transport."
+      accessCenterText: "The location in the 1st district makes your visit easy: walk from the city center, arrive quickly by taxi or use public transport.",
+      entryLabel: "Entrance",
+      entryTitle: "How to find us",
+      entryText: "To make your arrival easy: first the building entrance, then the intercom, then door Top 10.",
+      entryStep1Title: "Building entrance",
+      entryStep1Text: "Enter through the doorway at Werdertorgasse 15.",
+      entryStep2Title: "Intercom",
+      entryStep2Text: "At the intercom, please select PAPIMI® / Top 10.",
+      entryStep3Title: "Door Top 10",
+      entryStep3Text: "Inside the building, follow to the door marked number 10."
     });
     Object.assign(translations.ru, {
       navAccess: "Как добраться",
+      navEntry: "Вход",
       routeLabel: "Как добраться",
       routeTitle: "Как к нам доехать",
       routeAddress: "Werdertorgasse 15/10 · 1010 Wien",
@@ -3110,7 +3518,16 @@
       accessTramTitle: "Трамвай",
       accessTramText: "Ближайшие трамвайные остановки: Schottenring и Börse. Там ходят линии D, 1, 31 и 71.",
       accessCenterTitle: "Центрально и удобно",
-      accessCenterText: "Локация в 1-м районе делает визит простым: можно дойти пешком из центра, быстро доехать на такси или удобно приехать общественным транспортом."
+      accessCenterText: "Локация в 1-м районе делает визит простым: можно дойти пешком из центра, быстро доехать на такси или удобно приехать общественным транспортом.",
+      entryLabel: "Вход",
+      entryTitle: "Как пройти к нам",
+      entryText: "Чтобы не искать на месте: сначала вход в дом, потом домофон, затем дверь Top 10.",
+      entryStep1Title: "Вход в дом",
+      entryStep1Text: "Заходите через вход по адресу Werdertorgasse 15.",
+      entryStep2Title: "Домофон",
+      entryStep2Text: "На домофоне выберите PAPIMI® / Top 10.",
+      entryStep3Title: "Дверь Top 10",
+      entryStep3Text: "Внутри здания идите к двери с номером 10."
     });
     const langToggle = document.getElementById("langToggle"), langMenu = document.getElementById("langMenu"), currentLang = document.getElementById("currentLang"), langButtons = document.querySelectorAll(".lang-option"); function setLanguage(lang) { const d = translations[lang] || translations.de; document.documentElement.lang = lang; document.title = d.pageTitle; currentLang.textContent = lang.toUpperCase(); document.querySelectorAll("[data-i18n]").forEach(e => { const k = e.getAttribute("data-i18n"); if (d[k]) e.innerHTML = d[k] }); langButtons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang)); localStorage.setItem("selectedLanguage", lang); langMenu.classList.remove("open") } langToggle.addEventListener("click", () => langMenu.classList.toggle("open")); langButtons.forEach(b => b.addEventListener("click", () => setLanguage(b.dataset.lang))); document.addEventListener("click", e => { if (!e.target.closest(".language")) langMenu.classList.remove("open") }); setLanguage(localStorage.getItem("selectedLanguage") || "de");
   </script>
