@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+аааа<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -2793,6 +2793,320 @@
       box-shadow: 0 8px 20px rgba(215, 25, 32, .30) !important;
     }
 
+    /* Keep the body map in Anwendungsbereiche readable without over-stretching it. */
+    #bereiche .image-card.image-2 {
+      justify-self: center !important;
+      width: min(100%, 610px) !important;
+      min-height: 0 !important;
+      padding: 14px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: rgba(255, 251, 244, .70) !important;
+      border: 1px solid rgba(200, 179, 138, .32) !important;
+      box-shadow: 0 20px 52px rgba(47, 52, 55, .08), 0 0 34px rgba(141, 107, 232, .06) !important;
+    }
+
+    #bereiche .image-card.image-2 img {
+      width: 100% !important;
+      max-width: 611px !important;
+      height: auto !important;
+      min-height: 0 !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    html[data-theme="dark"] #bereiche .image-card.image-2 {
+      background: rgba(35, 39, 42, .78) !important;
+      border-color: rgba(211, 188, 142, .26) !important;
+      box-shadow: 0 20px 54px rgba(0, 0, 0, .22), 0 0 34px rgba(141, 107, 232, .10) !important;
+    }
+
+    @media(max-width: 950px) {
+      #bereiche .image-card.image-2 {
+        width: min(100%, 620px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
+    @media(max-width: 560px) {
+      #bereiche .image-card.image-2 {
+        width: min(100%, 430px) !important;
+        padding: 10px !important;
+      }
+    }
+
+    /* Compact arrival strip inspired by city transit signage */
+    .access-grid {
+      grid-template-columns: 1fr !important;
+      gap: 26px !important;
+      align-items: stretch !important;
+    }
+
+    .access-copy {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .access-copy .divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .access-copy p {
+      max-width: 680px !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .arrival-panel {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      display: grid !important;
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      gap: 0 !important;
+      overflow: hidden;
+      background: rgba(255, 251, 244, .88);
+      border: 1px solid rgba(200, 179, 138, .34);
+      box-shadow: 0 24px 70px rgba(47, 52, 55, .08), 0 0 44px rgba(141, 107, 232, .07);
+    }
+
+    .arrival-card {
+      min-height: 188px;
+      padding: 18px 14px 17px;
+      display: grid;
+      justify-items: center;
+      align-content: start;
+      text-align: center;
+      gap: 9px;
+      border-right: 1px solid rgba(200, 179, 138, .28);
+    }
+
+    .arrival-card:last-child {
+      border-right: 0;
+    }
+
+    .route-badges {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .arrival-panel .line-pill {
+      width: auto !important;
+      min-width: 31px !important;
+      height: 25px !important;
+      padding: 0 8px !important;
+      border-radius: 7px !important;
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0 !important;
+      box-shadow: 0 8px 18px rgba(47, 52, 55, .12);
+    }
+
+    .arrival-panel .line-pill.bus-line {
+      background: #2D82C7 !important;
+      border-color: rgba(210, 232, 255, .72) !important;
+      color: #fff !important;
+    }
+
+    .route-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a2f80;
+      border: 1px solid rgba(88, 94, 104, .42);
+      background: rgba(255, 251, 244, .62);
+    }
+
+    .route-icon svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.85;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .route-icon-tram svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .vehicle-shape {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      display: block;
+      border: 2px solid currentColor;
+      border-radius: 6px 6px 4px 4px;
+    }
+
+    .vehicle-shape::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      right: 4px;
+      height: 7px;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      opacity: .85;
+    }
+
+    .vehicle-shape::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      bottom: -5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: currentColor;
+      box-shadow: 12px 0 0 currentColor;
+    }
+
+    .route-icon-bus .vehicle-shape {
+      width: 27px;
+      height: 21px;
+      border-radius: 5px;
+    }
+
+    .arrival-card strong {
+      color: var(--violet);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .route-stop {
+      color: var(--text);
+      font-size: 12.5px;
+      line-height: 1.32;
+      min-height: 34px;
+    }
+
+    .route-time {
+      margin-top: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 26px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #4a2f80, #7655d8);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      box-shadow: 0 9px 22px rgba(74, 47, 128, .22);
+    }
+
+    .access-actions-centered {
+      justify-content: center;
+      margin-top: 0 !important;
+    }
+
+    html[data-theme="dark"] .arrival-panel {
+      background: #23272A !important;
+      border-color: rgba(211, 188, 142, .28) !important;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .26), 0 0 44px rgba(141, 107, 232, .12) !important;
+    }
+
+    html[data-theme="dark"] .arrival-card {
+      border-color: rgba(211, 188, 142, .18) !important;
+    }
+
+    html[data-theme="dark"] .route-icon {
+      background: rgba(255, 251, 244, .04) !important;
+      border-color: rgba(242, 237, 227, .34) !important;
+      color: #B9A6F4 !important;
+    }
+
+    html[data-theme="dark"] .arrival-card strong {
+      color: #B9A6F4 !important;
+    }
+
+    html[data-theme="dark"] .route-stop {
+      color: #F2EDE3 !important;
+    }
+
+    @media(max-width: 950px) {
+      .arrival-panel {
+        width: min(100%, 640px);
+        grid-template-columns: 1fr !important;
+      }
+
+      .arrival-card {
+        min-height: auto;
+        grid-template-columns: minmax(78px, auto) 54px minmax(0, 1fr) auto;
+        justify-items: start;
+        align-items: center;
+        text-align: left;
+        padding: 15px 16px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(200, 179, 138, .28);
+      }
+
+      .arrival-card:last-child {
+        border-bottom: 0;
+      }
+
+      .route-badges {
+        justify-content: flex-start;
+      }
+
+      .route-stop {
+        min-height: 0;
+      }
+
+      .route-time {
+        white-space: nowrap;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .access {
+        padding-top: 58px !important;
+        padding-bottom: 58px !important;
+      }
+
+      .access-copy {
+        text-align: left;
+      }
+
+      .access-copy .divider {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .arrival-card {
+        grid-template-columns: 1fr 54px;
+        gap: 8px 12px;
+      }
+
+      .arrival-card strong,
+      .route-stop {
+        grid-column: 1 / -1;
+      }
+
+      .route-time {
+        grid-column: 1 / -1;
+      }
+    }
+
     .entry-guide {
       position: relative;
       background:
@@ -3270,7 +3584,7 @@
             <div class="team-photo bella"></div>
             <div class="team-info">
               <h3>Bella</h3>
-              <p data-i18n="bellaRole">PAPIMI® Expertin, Leitung & Betreuung</p>
+              <p data-i18n="bellaRole">Einweisung & Organisation. Gründerin des Gesundheitszentrums am Werdertor.</p>
             </div>
           </div>
           <div class="team-card">
@@ -3281,10 +3595,10 @@
             </div>
           </div>
           <div class="team-card">
-            <div class="team-photo alona"></div>
+            <div class="team-photo"></div>
             <div class="team-info">
               <h3>Alona</h3>
-              <p data-i18n="alonaRole">Betreuung, Organisation & Terminplanung</p>
+              <p data-i18n="alonaRole">Organisation & Terminplanung</p>
             </div>
           </div>
         </div>
@@ -3319,36 +3633,50 @@
     <section id="anfahrt" class="section access">
       <div class="container access-grid">
         <div class="access-copy">
-          <div class="small-label" data-i18n="accessLabel">Zentral erreichbar</div>
-          <h2 class="section-title" data-i18n="accessTitle">Im 1. Bezirk ankommen</h2>
+          <div class="small-label" data-i18n="accessLabel">Anfahrt</div>
+          <h2 class="section-title" data-i18n="accessTitle">So erreichen Sie uns</h2>
           <div class="divider"></div>
-          <p data-i18n="accessText">Unser Zentrum liegt in der Werdertorgasse 15/10, zentral im 1. Bezirk. Am nächsten sind Schottenring, Börse und Salztorbrücke - von dort sind es nur wenige Minuten zu Fuß.</p>
-          <div class="access-actions">
-            <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer" data-i18n="accessRouteBtn">Route planen</a>
-          </div>
+          <p data-i18n="accessText">Werdertorgasse 15/10, 1010 Wien. Sie erreichen uns bequem mit U-Bahn, Straßenbahn oder Bus; die nächsten Haltestellen sind nur wenige Minuten entfernt.</p>
         </div>
-        <div class="access-panel" aria-label="Anreise Informationen">
-          <div class="access-card">
-            <span class="access-icon">U</span>
-            <strong data-i18n="accessUbahnTitle">U-Bahn</strong>
-            <p data-i18n="accessUbahnText">Nächste U-Bahn: Schottenring mit U2 und U4. Von dort sind es nur wenige Minuten zu Fuß bis zum Zentrum.</p>
-            <div class="transport-lines" aria-label="U-Bahn Linien">
-              <span class="line-pill metro u2">U2</span><span class="line-pill metro u4">U4</span>
-            </div>
-          </div>
-          <div class="access-card">
-            <span class="access-icon">TR</span>
+        <div class="access-panel arrival-panel" aria-label="Anreise Informationen">
+          <article class="arrival-card">
+            <div class="route-badges"><span class="line-pill metro u2">U2</span></div>
+            <span class="route-icon route-icon-rail" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><path d="M12.5 5.5h11c2.2 0 4 1.8 4 4v12.8c0 2.1-1.7 3.8-3.8 3.8H12.3c-2.1 0-3.8-1.7-3.8-3.8V9.5c0-2.2 1.8-4 4-4Z"/><path d="M11.5 12.5h13"/><path d="M11.5 17h13"/><path d="M13.2 25.8l-3 4.7"/><path d="M22.8 25.8l3 4.7"/><circle cx="13.7" cy="22.1" r="1.25"/><circle cx="22.3" cy="22.1" r="1.25"/></svg></span>
+            <strong data-i18n="accessU2Title">U2 - Schottentor</strong>
+            <span class="route-stop" data-i18n="accessU2Stop">Ausgang Schottentor</span>
+            <span class="route-time" data-i18n="accessTime">3-5 Minuten</span>
+          </article>
+          <article class="arrival-card">
+            <div class="route-badges"><span class="line-pill metro u4">U4</span></div>
+            <span class="route-icon route-icon-rail" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><path d="M12.5 5.5h11c2.2 0 4 1.8 4 4v12.8c0 2.1-1.7 3.8-3.8 3.8H12.3c-2.1 0-3.8-1.7-3.8-3.8V9.5c0-2.2 1.8-4 4-4Z"/><path d="M11.5 12.5h13"/><path d="M11.5 17h13"/><path d="M13.2 25.8l-3 4.7"/><path d="M22.8 25.8l3 4.7"/><circle cx="13.7" cy="22.1" r="1.25"/><circle cx="22.3" cy="22.1" r="1.25"/></svg></span>
+            <strong data-i18n="accessU4Title">U4 - Schottenring</strong>
+            <span class="route-stop" data-i18n="accessU4Stop">Ausgang Schottenring</span>
+            <span class="route-time" data-i18n="accessTime">3-5 Minuten</span>
+          </article>
+          <article class="arrival-card">
+            <div class="route-badges"><span class="line-pill tram tram-letter">D</span><span class="line-pill tram">1</span><span class="line-pill tram">71</span></div>
+            <span class="route-icon route-icon-tram" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><path d="M14 4.5h8"/><path d="M18 4.5v4"/><path d="M11.5 8.5h13c1.9 0 3.5 1.6 3.5 3.5v10.6c0 2-1.6 3.6-3.6 3.6H11.6c-2 0-3.6-1.6-3.6-3.6V12c0-1.9 1.6-3.5 3.5-3.5Z"/><path d="M11.3 14h13.4"/><path d="M11.3 18.2h13.4"/><path d="M13.4 26.2l-3.1 4.5"/><path d="M22.6 26.2l3.1 4.5"/><circle cx="13.6" cy="22.6" r="1.2"/><circle cx="22.4" cy="22.6" r="1.2"/></svg></span>
             <strong data-i18n="accessTramTitle">Straßenbahn</strong>
-            <p data-i18n="accessTramText">Nächste Straßenbahn-Haltestellen: Schottenring und Börse. Dort fahren die Linien D, 1, 31 und 71.</p>
-            <div class="transport-lines" aria-label="Straßenbahnlinien">
-              <span class="line-pill tram tram-letter">D</span><span class="line-pill tram">1</span><span class="line-pill tram">31</span><span class="line-pill tram">71</span>
-            </div>
-          </div>
-          <div class="access-card">
-            <span class="access-icon">1.</span>
-            <strong data-i18n="accessCenterTitle">Zentral & angenehm</strong>
-            <p data-i18n="accessCenterText">Die Lage im 1. Bezirk macht Ihren Besuch unkompliziert: gut zu Fuß aus der Innenstadt, schnell mit dem Taxi und einfach mit öffentlichen Verkehrsmitteln.</p>
-          </div>
+            <span class="route-stop" data-i18n="accessTramStop">Haltestelle Börse</span>
+            <span class="route-time" data-i18n="accessTime">3-5 Minuten</span>
+          </article>
+          <article class="arrival-card">
+            <div class="route-badges"><span class="line-pill bus-line">1A</span></div>
+            <span class="route-icon route-icon-bus" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><path d="M10.5 8.5h15c1.8 0 3.3 1.5 3.3 3.3v10.9c0 1.8-1.5 3.3-3.3 3.3h-15c-1.8 0-3.3-1.5-3.3-3.3V11.8c0-1.8 1.5-3.3 3.3-3.3Z"/><path d="M10.5 14h15"/><path d="M11 18.4h14"/><path d="M10.8 26v2.1"/><path d="M25.2 26v2.1"/><circle cx="12.8" cy="22.4" r="1.2"/><circle cx="23.2" cy="22.4" r="1.2"/></svg></span>
+            <strong data-i18n="accessBusOneTitle">Bus 1A</strong>
+            <span class="route-stop" data-i18n="accessBusOneStop">Haltestelle Schwertgasse</span>
+            <span class="route-time" data-i18n="accessTime">3-5 Minuten</span>
+          </article>
+          <article class="arrival-card">
+            <div class="route-badges"><span class="line-pill bus-line">2A</span><span class="line-pill bus-line">3A</span></div>
+            <span class="route-icon route-icon-bus" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><path d="M10.5 8.5h15c1.8 0 3.3 1.5 3.3 3.3v10.9c0 1.8-1.5 3.3-3.3 3.3h-15c-1.8 0-3.3-1.5-3.3-3.3V11.8c0-1.8 1.5-3.3 3.3-3.3Z"/><path d="M10.5 14h15"/><path d="M11 18.4h14"/><path d="M10.8 26v2.1"/><path d="M25.2 26v2.1"/><circle cx="12.8" cy="22.4" r="1.2"/><circle cx="23.2" cy="22.4" r="1.2"/></svg></span>
+            <strong data-i18n="accessBusTwoTitle">Bus 2A - 3A</strong>
+            <span class="route-stop" data-i18n="accessBusTwoStop">Haltestelle Rudolfsplatz</span>
+            <span class="route-time" data-i18n="accessTime">3-5 Minuten</span>
+          </article>
+        </div>
+        <div class="access-actions access-actions-centered">
+          <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Werdertorgasse%2015%2F10%2C%201010%20Wien%2C%20Austria" target="_blank" rel="noopener noreferrer" data-i18n="accessRouteBtn">Route planen</a>
         </div>
       </div>
     </section>
@@ -3373,7 +3701,7 @@
           </article>
           <article class="entry-step">
             <div class="entry-photo entry-photo-intercom">
-              <img src="images/entry-intercom.jpg" alt="Gegensprechanlage am Eingang">
+              <img src="images/entry-intercom.png" alt="Gegensprechanlage am Eingang">
               <span class="entry-callout">Top 10</span>
             </div>
             <div class="entry-content">
@@ -3431,11 +3759,13 @@
     </div>
   </footer>
   <script>
-    const translations = { de: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Regeneration. Energie. Balance.", navPapimi: "PAPIMI®", navAreas: "Anwendungsbereiche", navProcess: "Ablauf", navTeam: "Team", navPrices: "Preise", navContact: "Kontakt", navAppointment: "Termin vereinbaren", heroLabel: "PAPIMI® Zentrum Wien", heroTitle: "Regeneration. Kraft. Wohlbefinden.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span>-Technologie zur Unterstützung Ihrer Regeneration, Energie und Lebensqualität.", heroBtn: "Termin vereinbaren", benefit1: "Nicht-invasiv und schmerzfrei", benefit2: "Unterstützt natürliche Regeneration", benefit3: "Mehr Energie und Vitalität", benefit4: "Wissenschaftlich fundierte Technologie", whatLabel: "Was ist PAPIMI®?", whatTitle: "Sanfte Impulse für Ihre Regeneration", whatText1: "PAPIMI® ist eine nicht-invasive elektromagnetische Impulstechnologie, die körpereigene Prozesse unterstützen und die Selbstregulation des Organismus fördern kann.", whatText2: "Die Anwendung ist schmerzfrei, angenehm und wird individuell auf Ihre Bedürfnisse abgestimmt.", moreBtn: "Mehr erfahren", areasLabel: "Für wen ist PAPIMI®?", areasTitle: "Anwendungsbereiche", areasText: "PAPIMI® kann unterstützend eingesetzt werden für Menschen, die Regeneration, Energie und Wohlbefinden fördern möchten.", area1: "Chronische Schmerzen und Verspannungen", area2: "Regeneration nach Verletzungen oder Operationen", area3: "Sport, Rehabilitation und Mobilität", area4: "Burnout, Stress und Erschöpfung", area5: "Energie, Konzentration und Brainfog", area6: "Prävention und gesundes Altern", processLabel: "So läuft Ihr Besuch ab", processTitle: "In fünf Schritten zu Ihrer Anwendung", step1Title: "Beratung & Anamnese", step1Text: "Wir sprechen über Ihre Beschwerden, Ziele und Erwartungen.", step2Title: "Ärztliche Empfehlung", step2Text: "Auf Wunsch erfolgt eine medizinische Einschätzung.", step3Title: "PAPIMI® Anwendung", step3Text: "Die Anwendung wird individuell auf Ihre Situation abgestimmt.", step4Title: "Nachsorge", step4Text: "Wir besprechen Ihre Reaktion und planen die nächsten Schritte.", step5Title: "Empfehlungen", step5Text: "Sie erhalten persönliche Empfehlungen für weitere Anwendungen.", teamLabel: "Für Sie da", teamTitle: "Unser Team", doctorRole: "Facharzt für Psychiatrie, Psychotherapeutische Medizin und Neurologie", bellaRole: "PAPIMI® Expertin, Leitung & Betreuung", miriamRole: "Betreuung, Einweisung & Organisation", alonaRole: "Betreuung, Organisation & Terminplanung", pricesLabel: "Unsere Preise", pricesTitle: "Individuelle Behandlung", pricesText: "Jede Behandlung wird individuell auf Ihre Beschwerden und Ziele abgestimmt. Daher richtet sich der Preis nach Dauer und Umfang der Therapie.", priceAmount: "50 € – 130 €", packageFive: "5 Sitzungen + 1 gratis", packageFiveText: "Für einen kompakten Behandlungszyklus.", packageTen: "10 Sitzungen + 2 gratis", packageTenText: "Für eine intensivere und nachhaltige Begleitung.", priceNote: "Die Erstberatung ist kostenlos und unverbindlich. Gemeinsam erstellen wir einen individuellen Behandlungsplan.", price1Title: "Einzelsitzung", price1Text: "Ideal zum Kennenlernen der PAPIMI®-Anwendung.", price2Title: "Pakete", price2Text: "Für regelmäßige Anwendungen und nachhaltige Begleitung.", price3Title: "Erstgespräch", price3Text: "Persönliche Einschätzung und individuelle Empfehlung.", pricesBtn: "Preise anfragen", contactLabel: "Kontakt", contactTitle: "Termin vereinbaren", contactText: "Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich.", callBtn: "Jetzt anrufen", hoursTitle: "Öffnungszeiten", hoursText: "Montag – Freitag<br>09:00 – 18:00", hoursSat: "Samstag nach Vereinbarung", locationTitle: "Standort", locationText: "Zentrale Lage im 1. Bezirk in Wien.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", footerLinks: "<a href='impressum.html'>Impressum</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Datenschutz</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patienteninformation</button>" }, en: { pageTitle: "Health Center am Werdertor – PAPIMI® Center Vienna", logoTitle: "HEALTH CENTER<br>AM WERDERTOR", logoSub: "Regeneration. Energy. Balance.", navPapimi: "PAPIMI®", navAreas: "Areas of use", navProcess: "Process", navTeam: "Team", navPrices: "Prices", navContact: "Contact", navAppointment: "Book appointment", heroLabel: "PAPIMI® Center Vienna", heroTitle: "Regeneration. Strength. Well-being.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span> technology to support your regeneration, energy and quality of life.", heroBtn: "Book appointment", benefit1: "Non-invasive and pain-free", benefit2: "Supports natural regeneration", benefit3: "More energy and vitality", benefit4: "Scientifically based technology", whatLabel: "What is PAPIMI®?", whatTitle: "Gentle impulses for your regeneration", whatText1: "PAPIMI® is a non-invasive electromagnetic impulse technology that can support the body’s own processes and promote self-regulation.", whatText2: "The application is pain-free, pleasant and individually adapted to your needs.", moreBtn: "Learn more", areasLabel: "Who is PAPIMI® for?", areasTitle: "Areas of use", areasText: "PAPIMI® can be used as supportive care for people who want to promote regeneration, energy and well-being.", area1: "Chronic pain and tension", area2: "Regeneration after injuries or operations", area3: "Sports, rehabilitation and mobility", area4: "Burnout, stress and exhaustion", area5: "Energy, concentration and brain fog", area6: "Prevention and healthy aging", processLabel: "How your visit works", processTitle: "Your application in five steps", step1Title: "Consultation & anamnesis", step1Text: "We talk about your symptoms, goals and expectations.", step2Title: "Medical recommendation", step2Text: "A medical assessment can be provided on request.", step3Title: "PAPIMI® application", step3Text: "The application is individually adapted to your situation.", step4Title: "Follow-up", step4Text: "We discuss your reaction and plan the next steps.", step5Title: "Recommendations", step5Text: "You receive personal recommendations for further applications.", teamLabel: "Here for you", teamTitle: "Our team", doctorRole: "Specialist in psychiatry, psychotherapeutic medicine and neurology", bellaRole: "PAPIMI® expert, management & care", miriamRole: "Care, instruction & organization", alonaRole: "Care, organization & appointment planning", pricesLabel: "Our prices", pricesTitle: "Individual treatment", pricesText: "Each treatment is individually tailored to your symptoms and goals. Therefore, the price depends on the duration and scope of the therapy.", priceAmount: "50 € – 130 €", packageFive: "5 sessions + 1 free", packageFiveText: "For a compact treatment cycle.", packageTen: "10 sessions + 2 free", packageTenText: "For more intensive and lasting support.", priceNote: "The initial consultation is free of charge and non-binding. Together we create an individual treatment plan.", price1Title: "Single session", price1Text: "Ideal for getting to know the PAPIMI® application.", price2Title: "Packages", price2Text: "For regular applications and sustainable support.", price3Title: "Initial consultation", price3Text: "Personal assessment and individual recommendation.", pricesBtn: "Request prices", contactLabel: "Contact", contactTitle: "Book an appointment", contactText: "We look forward to your inquiry and will be happy to advise you personally.", callBtn: "Call now", hoursTitle: "Opening hours", hoursText: "Monday – Friday<br>09:00 – 18:00", hoursSat: "Saturday by appointment", locationTitle: "Location", locationText: "Central location in Vienna’s 1st district.", footerCopy: "© Health Center am Werdertor – PAPIMI® Center Vienna", footerLinks: "<a href='impressum.html'>Imprint</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Privacy Policy</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patient information</button>" }, ru: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Регенерация. Энергия. Баланс.", navPapimi: "PAPIMI®", navAreas: "Направления", navProcess: "Как проходит", navTeam: "Команда", navPrices: "Цены", navContact: "Контакты", navAppointment: "Записаться", heroLabel: "PAPIMI® Центр Вена", heroTitle: "Регенерация. Сила. Благополучие.", heroText: "Инновационная технология <span class=\"papimi-outline\">PAPIMI®</span> для поддержки восстановления, энергии и качества жизни.", heroBtn: "Записаться", benefit1: "Неинвазивно и без боли", benefit2: "Поддержка естественного восстановления", benefit3: "Больше энергии и жизненных сил", benefit4: "Научно обоснованная технология", whatLabel: "Что такое PAPIMI®?", whatTitle: "Мягкие импульсы для вашего восстановления", whatText1: "PAPIMI® — это неинвазивная электромагнитная импульсная технология, которая может поддерживать естественные процессы организма и саморегуляцию.", whatText2: "Процедура безболезненная, комфортная и подбирается индивидуально под ваши потребности.", moreBtn: "Подробнее", areasLabel: "Кому подходит PAPIMI®?", areasTitle: "Направления применения", areasText: "PAPIMI® может использоваться как поддерживающая процедура для людей, которые хотят улучшить восстановление, энергию и самочувствие.", area1: "Хронические боли и напряжение", area2: "Восстановление после травм или операций", area3: "Спорт, реабилитация и подвижность", area4: "Выгорание, стресс и истощение", area5: "Энергия, концентрация и brain fog", area6: "Профилактика и здоровое старение", processLabel: "Как проходит визит", processTitle: "Процедура в пять шагов", step1Title: "Консультация и анамнез", step1Text: "Мы обсуждаем ваши жалобы, цели и ожидания.", step2Title: "Врачебная рекомендация", step2Text: "По желанию возможна медицинская оценка.", step3Title: "PAPIMI® процедура", step3Text: "Процедура подбирается индивидуально под вашу ситуацию.", step4Title: "Наблюдение", step4Text: "Мы обсуждаем вашу реакцию и планируем следующие шаги.", step5Title: "Рекомендации", step5Text: "Вы получаете персональные рекомендации по дальнейшим процедурам.", teamLabel: "Мы рядом с вами", teamTitle: "Наша команда", doctorRole: "Специалист по психиатрии, психотерапевтической медицине и неврологии", bellaRole: "PAPIMI® эксперт, руководство и сопровождение", miriamRole: "Сопровождение, инструктаж и организация", alonaRole: "Сопровождение, организация и запись", pricesLabel: "Наши цены", pricesTitle: "Индивидуальное лечение", pricesText: "Каждая процедура индивидуально подбирается с учетом ваших жалоб и целей. Поэтому цена зависит от длительности и объема терапии.", priceAmount: "50 € – 130 €", packageFive: "5 сеансов + 1 бесплатно", packageFiveText: "Для компактного курса процедур.", packageTen: "10 сеансов + 2 бесплатно", packageTenText: "Для более интенсивного и устойчивого сопровождения.", priceNote: "Первичная консультация бесплатна и ни к чему не обязывает. Вместе мы составим индивидуальный план лечения.", price1Title: "Одна процедура", price1Text: "Идеально, чтобы познакомиться с PAPIMI®.", price2Title: "Пакеты", price2Text: "Для регулярных процедур и длительного сопровождения.", price3Title: "Первичная консультация", price3Text: "Личная оценка и индивидуальная рекомендация.", pricesBtn: "Узнать цены", contactLabel: "Контакты", contactTitle: "Записаться на прием", contactText: "Мы будем рады вашему обращению и лично проконсультируем вас.", callBtn: "Позвонить сейчас", hoursTitle: "Время работы", hoursText: "Понедельник – пятница<br>09:00 – 18:00", hoursSat: "Суббота по договоренности", locationTitle: "Адрес", locationText: "Удобное расположение в 1-м районе Вены.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", footerLinks: "<a href='impressum.html'>Impressum</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Datenschutz</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patienteninformation</button>" } };
+    const translations = { de: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Regeneration. Energie. Balance.", navPapimi: "PAPIMI®", navAreas: "Anwendungsbereiche", navProcess: "Ablauf", navTeam: "Team", navPrices: "Preise", navContact: "Kontakt", navAppointment: "Termin vereinbaren", heroLabel: "PAPIMI® Zentrum Wien", heroTitle: "Regeneration. Kraft. Wohlbefinden.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span>-Technologie zur Unterstützung Ihrer Regeneration, Energie und Lebensqualität.", heroBtn: "Termin vereinbaren", benefit1: "Nicht-invasiv und schmerzfrei", benefit2: "Unterstützt natürliche Regeneration", benefit3: "Mehr Energie und Vitalität", benefit4: "Wissenschaftlich fundierte Technologie", whatLabel: "Was ist PAPIMI®?", whatTitle: "Sanfte Impulse für Ihre Regeneration", whatText1: "PAPIMI® ist eine nicht-invasive elektromagnetische Impulstechnologie, die körpereigene Prozesse unterstützen und die Selbstregulation des Organismus fördern kann.", whatText2: "Die Anwendung ist schmerzfrei, angenehm und wird individuell auf Ihre Bedürfnisse abgestimmt.", moreBtn: "Mehr erfahren", areasLabel: "Für wen ist PAPIMI®?", areasTitle: "Anwendungsbereiche", areasText: "PAPIMI® kann unterstützend eingesetzt werden für Menschen, die Regeneration, Energie und Wohlbefinden fördern möchten.", area1: "Chronische Schmerzen und Verspannungen", area2: "Regeneration nach Verletzungen oder Operationen", area3: "Sport, Rehabilitation und Mobilität", area4: "Burnout, Stress und Erschöpfung", area5: "Energie, Konzentration und Brainfog", area6: "Prävention und gesundes Altern", processLabel: "So läuft Ihr Besuch ab", processTitle: "In fünf Schritten zu Ihrer Anwendung", step1Title: "Beratung & Anamnese", step1Text: "Wir sprechen über Ihre Beschwerden, Ziele und Erwartungen.", step2Title: "Ärztliche Empfehlung", step2Text: "Auf Wunsch erfolgt eine medizinische Einschätzung.", step3Title: "PAPIMI® Anwendung", step3Text: "Die Anwendung wird individuell auf Ihre Situation abgestimmt.", step4Title: "Nachsorge", step4Text: "Wir besprechen Ihre Reaktion und planen die nächsten Schritte.", step5Title: "Empfehlungen", step5Text: "Sie erhalten persönliche Empfehlungen für weitere Anwendungen.", teamLabel: "Für Sie da", teamTitle: "Unser Team", doctorRole: "Facharzt für Psychiatrie, Psychotherapeutische Medizin und Neurologie", bellaRole: "Einweisung & Organisation. Gründerin des Gesundheitszentrums am Werdertor.", miriamRole: "Betreuung, Einweisung & Organisation", alonaRole: "Organisation & Terminplanung", pricesLabel: "Unsere Preise", pricesTitle: "Individuelle Behandlung", pricesText: "Jede Behandlung wird individuell auf Ihre Beschwerden und Ziele abgestimmt. Daher richtet sich der Preis nach Dauer und Umfang der Therapie.", priceAmount: "50 € – 130 €", packageFive: "5 Sitzungen + 1 gratis", packageFiveText: "Für einen kompakten Behandlungszyklus.", packageTen: "10 Sitzungen + 2 gratis", packageTenText: "Für eine intensivere und nachhaltige Begleitung.", priceNote: "Die Erstberatung ist kostenlos und unverbindlich. Gemeinsam erstellen wir einen individuellen Behandlungsplan.", price1Title: "Einzelsitzung", price1Text: "Ideal zum Kennenlernen der PAPIMI®-Anwendung.", price2Title: "Pakete", price2Text: "Für regelmäßige Anwendungen und nachhaltige Begleitung.", price3Title: "Erstgespräch", price3Text: "Persönliche Einschätzung und individuelle Empfehlung.", pricesBtn: "Preise anfragen", contactLabel: "Kontakt", contactTitle: "Termin vereinbaren", contactText: "Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich.", callBtn: "Jetzt anrufen", hoursTitle: "Öffnungszeiten", hoursText: "Montag – Freitag<br>09:00 – 18:00", hoursSat: "Samstag nach Vereinbarung", locationTitle: "Standort", locationText: "Zentrale Lage im 1. Bezirk in Wien.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Zentrum Wien", footerLinks: "<a href='impressum.html'>Impressum</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Datenschutz</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patienteninformation</button>" }, en: { pageTitle: "Health Center am Werdertor – PAPIMI® Center Vienna", logoTitle: "HEALTH CENTER<br>AM WERDERTOR", logoSub: "Regeneration. Energy. Balance.", navPapimi: "PAPIMI®", navAreas: "Areas of use", navProcess: "Process", navTeam: "Team", navPrices: "Prices", navContact: "Contact", navAppointment: "Book appointment", heroLabel: "PAPIMI® Center Vienna", heroTitle: "Regeneration. Strength. Well-being.", heroText: "Innovative <span class=\"papimi-outline\">PAPIMI®</span> technology to support your regeneration, energy and quality of life.", heroBtn: "Book appointment", benefit1: "Non-invasive and pain-free", benefit2: "Supports natural regeneration", benefit3: "More energy and vitality", benefit4: "Scientifically based technology", whatLabel: "What is PAPIMI®?", whatTitle: "Gentle impulses for your regeneration", whatText1: "PAPIMI® is a non-invasive electromagnetic impulse technology that can support the body’s own processes and promote self-regulation.", whatText2: "The application is pain-free, pleasant and individually adapted to your needs.", moreBtn: "Learn more", areasLabel: "Who is PAPIMI® for?", areasTitle: "Areas of use", areasText: "PAPIMI® can be used as supportive care for people who want to promote regeneration, energy and well-being.", area1: "Chronic pain and tension", area2: "Regeneration after injuries or operations", area3: "Sports, rehabilitation and mobility", area4: "Burnout, stress and exhaustion", area5: "Energy, concentration and brain fog", area6: "Prevention and healthy aging", processLabel: "How your visit works", processTitle: "Your application in five steps", step1Title: "Consultation & anamnesis", step1Text: "We talk about your symptoms, goals and expectations.", step2Title: "Medical recommendation", step2Text: "A medical assessment can be provided on request.", step3Title: "PAPIMI® application", step3Text: "The application is individually adapted to your situation.", step4Title: "Follow-up", step4Text: "We discuss your reaction and plan the next steps.", step5Title: "Recommendations", step5Text: "You receive personal recommendations for further applications.", teamLabel: "Here for you", teamTitle: "Our team", doctorRole: "Specialist in psychiatry, psychotherapeutic medicine and neurology", bellaRole: "Instruction & organization. Founder of Health Center am Werdertor.", miriamRole: "Care, instruction & organization", alonaRole: "Organization & appointment planning", pricesLabel: "Our prices", pricesTitle: "Individual treatment", pricesText: "Each treatment is individually tailored to your symptoms and goals. Therefore, the price depends on the duration and scope of the therapy.", priceAmount: "50 € – 130 €", packageFive: "5 sessions + 1 free", packageFiveText: "For a compact treatment cycle.", packageTen: "10 sessions + 2 free", packageTenText: "For more intensive and lasting support.", priceNote: "The initial consultation is free of charge and non-binding. Together we create an individual treatment plan.", price1Title: "Single session", price1Text: "Ideal for getting to know the PAPIMI® application.", price2Title: "Packages", price2Text: "For regular applications and sustainable support.", price3Title: "Initial consultation", price3Text: "Personal assessment and individual recommendation.", pricesBtn: "Request prices", contactLabel: "Contact", contactTitle: "Book an appointment", contactText: "We look forward to your inquiry and will be happy to advise you personally.", callBtn: "Call now", hoursTitle: "Opening hours", hoursText: "Monday – Friday<br>09:00 – 18:00", hoursSat: "Saturday by appointment", locationTitle: "Location", locationText: "Central location in Vienna’s 1st district.", footerCopy: "© Health Center am Werdertor – PAPIMI® Center Vienna", footerLinks: "<a href='impressum.html'>Imprint</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Privacy Policy</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patient information</button>" }, ru: { pageTitle: "Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", logoTitle: "GESUNDHEITSZENTRUM<br>AM WERDERTOR", logoSub: "Регенерация. Энергия. Баланс.", navPapimi: "PAPIMI®", navAreas: "Направления", navProcess: "Как проходит", navTeam: "Команда", navPrices: "Цены", navContact: "Контакты", navAppointment: "Записаться", heroLabel: "PAPIMI® Центр Вена", heroTitle: "Регенерация. Сила. Благополучие.", heroText: "Инновационная технология <span class=\"papimi-outline\">PAPIMI®</span> для поддержки восстановления, энергии и качества жизни.", heroBtn: "Записаться", benefit1: "Неинвазивно и без боли", benefit2: "Поддержка естественного восстановления", benefit3: "Больше энергии и жизненных сил", benefit4: "Научно обоснованная технология", whatLabel: "Что такое PAPIMI®?", whatTitle: "Мягкие импульсы для вашего восстановления", whatText1: "PAPIMI® — это неинвазивная электромагнитная импульсная технология, которая может поддерживать естественные процессы организма и саморегуляцию.", whatText2: "Процедура безболезненная, комфортная и подбирается индивидуально под ваши потребности.", moreBtn: "Подробнее", areasLabel: "Кому подходит PAPIMI®?", areasTitle: "Направления применения", areasText: "PAPIMI® может использоваться как поддерживающая процедура для людей, которые хотят улучшить восстановление, энергию и самочувствие.", area1: "Хронические боли и напряжение", area2: "Восстановление после травм или операций", area3: "Спорт, реабилитация и подвижность", area4: "Выгорание, стресс и истощение", area5: "Энергия, концентрация и brain fog", area6: "Профилактика и здоровое старение", processLabel: "Как проходит визит", processTitle: "Процедура в пять шагов", step1Title: "Консультация и анамнез", step1Text: "Мы обсуждаем ваши жалобы, цели и ожидания.", step2Title: "Врачебная рекомендация", step2Text: "По желанию возможна медицинская оценка.", step3Title: "PAPIMI® процедура", step3Text: "Процедура подбирается индивидуально под вашу ситуацию.", step4Title: "Наблюдение", step4Text: "Мы обсуждаем вашу реакцию и планируем следующие шаги.", step5Title: "Рекомендации", step5Text: "Вы получаете персональные рекомендации по дальнейшим процедурам.", teamLabel: "Мы рядом с вами", teamTitle: "Наша команда", doctorRole: "Специалист по психиатрии, психотерапевтической медицине и неврологии", bellaRole: "Инструктаж и организация. Основатель Gesundheitszentrum am Werdertor.", miriamRole: "Сопровождение, инструктаж и организация", alonaRole: "Организация и запись", pricesLabel: "Наши цены", pricesTitle: "Индивидуальное лечение", pricesText: "Каждая процедура индивидуально подбирается с учетом ваших жалоб и целей. Поэтому цена зависит от длительности и объема терапии.", priceAmount: "50 € – 130 €", packageFive: "5 сеансов + 1 бесплатно", packageFiveText: "Для компактного курса процедур.", packageTen: "10 сеансов + 2 бесплатно", packageTenText: "Для более интенсивного и устойчивого сопровождения.", priceNote: "Первичная консультация бесплатна и ни к чему не обязывает. Вместе мы составим индивидуальный план лечения.", price1Title: "Одна процедура", price1Text: "Идеально, чтобы познакомиться с PAPIMI®.", price2Title: "Пакеты", price2Text: "Для регулярных процедур и длительного сопровождения.", price3Title: "Первичная консультация", price3Text: "Личная оценка и индивидуальная рекомендация.", pricesBtn: "Узнать цены", contactLabel: "Контакты", contactTitle: "Записаться на прием", contactText: "Мы будем рады вашему обращению и лично проконсультируем вас.", callBtn: "Позвонить сейчас", hoursTitle: "Время работы", hoursText: "Понедельник – пятница<br>09:00 – 18:00", hoursSat: "Суббота по договоренности", locationTitle: "Адрес", locationText: "Удобное расположение в 1-м районе Вены.", footerCopy: "© Gesundheitszentrum am Werdertor – PAPIMI® Центр Вена", footerLinks: "<a href='impressum.html'>Impressum</a> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Datenschutz</button> &nbsp; | &nbsp; <button class='footer-fake-link' type='button'>Patienteninformation</button>" } };
 
     Object.assign(translations.de, {
       navAccess: "Anfahrt",
       navEntry: "Eingang",
+      bellaRole: "Einweisung & Organisation. Gründerin des Gesundheitszentrums am Werdertor.",
+      alonaRole: "Organisation & Terminplanung",
       routeLabel: "Anfahrt",
       routeTitle: "So kommen Sie zu uns",
       routeAddress: "Werdertorgasse 15/10 · 1010 Wien",
@@ -3446,9 +3776,20 @@
       heroAddress: "Werdertorgasse 15/10, 1010 Wien",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
       accessLabel: "Anfahrt",
-      accessTitle: "So kommen Sie zu uns",
-      accessText: "Unser Zentrum liegt in der Werdertorgasse 15/10, zentral im 1. Bezirk. Am nächsten sind Schottenring, Börse und Salztorbrücke - von dort sind es nur wenige Minuten zu Fuß.",
+      accessTitle: "So erreichen Sie uns",
+      accessText: "Werdertorgasse 15/10, 1010 Wien. Sie erreichen uns bequem mit U-Bahn, Straßenbahn oder Bus; die nächsten Haltestellen sind nur wenige Minuten entfernt.",
       accessRouteBtn: "Route planen",
+      accessU2Title: "U2 - Schottentor",
+      accessU2Stop: "Ausgang Schottentor",
+      accessU4Title: "U4 - Schottenring",
+      accessU4Stop: "Ausgang Schottenring",
+      accessTramTitle: "Straßenbahn",
+      accessTramStop: "Haltestelle Börse",
+      accessBusOneTitle: "Bus 1A",
+      accessBusOneStop: "Haltestelle Schwertgasse",
+      accessBusTwoTitle: "Bus 2A - 3A",
+      accessBusTwoStop: "Haltestelle Rudolfsplatz",
+      accessTime: "3-5 Minuten",
       accessUbahnTitle: "U-Bahn",
       accessUbahnText: "Nächste U-Bahn: Schottenring mit U2 und U4. Von dort sind es nur wenige Minuten zu Fuß bis zum Zentrum.",
       accessTramTitle: "Straßenbahn",
@@ -3468,6 +3809,8 @@
     Object.assign(translations.en, {
       navAccess: "Directions",
       navEntry: "Entrance",
+      bellaRole: "Instruction & organization. Founder of Health Center am Werdertor.",
+      alonaRole: "Organization & appointment planning",
       routeLabel: "Directions",
       routeTitle: "How to get to us",
       routeAddress: "Werdertorgasse 15/10 · 1010 Vienna",
@@ -3478,9 +3821,20 @@
       heroAddress: "Werdertorgasse 15/10, 1010 Vienna",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
       accessLabel: "Directions",
-      accessTitle: "How to get to us",
-      accessText: "Our center is located at Werdertorgasse 15/10, right in Vienna's 1st district. The closest stops are Schottenring, Börse and Salztorbrücke - only a short walk away.",
+      accessTitle: "How to reach us",
+      accessText: "Werdertorgasse 15/10, 1010 Vienna. You can reach us easily by underground, tram or bus; the nearest stops are only a few minutes away.",
       accessRouteBtn: "Plan route",
+      accessU2Title: "U2 - Schottentor",
+      accessU2Stop: "Exit Schottentor",
+      accessU4Title: "U4 - Schottenring",
+      accessU4Stop: "Exit Schottenring",
+      accessTramTitle: "Tram",
+      accessTramStop: "Stop Börse",
+      accessBusOneTitle: "Bus 1A",
+      accessBusOneStop: "Stop Schwertgasse",
+      accessBusTwoTitle: "Bus 2A - 3A",
+      accessBusTwoStop: "Stop Rudolfsplatz",
+      accessTime: "3-5 min",
       accessUbahnTitle: "Underground",
       accessUbahnText: "Nearest underground: Schottenring with U2 and U4. From there, the center is only a short walk away.",
       accessTramTitle: "Tram",
@@ -3500,6 +3854,8 @@
     Object.assign(translations.ru, {
       navAccess: "Как добраться",
       navEntry: "Вход",
+      bellaRole: "Инструктаж и организация. Основатель Gesundheitszentrum am Werdertor.",
+      alonaRole: "Организация и запись",
       routeLabel: "Как добраться",
       routeTitle: "Как к нам доехать",
       routeAddress: "Werdertorgasse 15/10 · 1010 Wien",
@@ -3510,9 +3866,20 @@
       heroAddress: "Werdertorgasse 15/10, 1010 Wien",
       heroTransit: "<span class='transit-badges'><span class='line-pill metro u2'>U2</span><span class='line-pill metro u4'>U4</span><span class='line-pill tram tram-letter'>D</span><span class='line-pill tram'>1</span><span class='line-pill tram'>31</span><span class='line-pill tram'>71</span></span><span class='route-note'>Schottenring / Börse</span>",
       accessLabel: "Как добраться",
-      accessTitle: "Как к нам доехать",
-      accessText: "Наш центр находится по адресу Werdertorgasse 15/10, в центре 1-го района. Ближайшие точки - Schottenring, Börse и Salztorbrücke, оттуда всего несколько минут пешком.",
+      accessTitle: "Как к нам добраться",
+      accessText: "Werdertorgasse 15/10, 1010 Wien. К нам удобно добраться на метро, трамвае или автобусе; ближайшие остановки находятся всего в нескольких минутах пешком.",
       accessRouteBtn: "Построить маршрут",
+      accessU2Title: "U2 - Schottentor",
+      accessU2Stop: "Выход Schottentor",
+      accessU4Title: "U4 - Schottenring",
+      accessU4Stop: "Выход Schottenring",
+      accessTramTitle: "Трамвай",
+      accessTramStop: "Остановка Börse",
+      accessBusOneTitle: "Автобус 1A",
+      accessBusOneStop: "Остановка Schwertgasse",
+      accessBusTwoTitle: "Автобус 2A - 3A",
+      accessBusTwoStop: "Остановка Rudolfsplatz",
+      accessTime: "3-5 минут",
       accessUbahnTitle: "Метро",
       accessUbahnText: "Ближайшее метро: Schottenring, линии U2 и U4. Оттуда до центра всего несколько минут пешком.",
       accessTramTitle: "Трамвай",
